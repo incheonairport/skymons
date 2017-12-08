@@ -1,0 +1,21 @@
+.banner {
+  height: 145px;
+  &.player {
+    background: url(/static/sm/images/banner1.jpg) no-repeat;
+  }
+
+  &-txt{
+    font-size: 1.125rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 25px;
+    &:before{
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #fff;
+      margin: 15px auto;
+    }
+  }
+}
