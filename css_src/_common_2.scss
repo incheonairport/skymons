@@ -1,0 +1,278 @@
+.tab {
+  &-nav {
+    &-list {
+      @extend %clearfix;
+      width: 100%;
+      &-item {
+        width:25%;
+        float: left;
+        &+.tab-nav-list-item{
+          a{
+            border-left: 1px;
+          }
+        }
+      }
+      &-link {
+        padding:20px 0;
+        display: block;
+        background:#fff;
+        border: 1px solid #d9d9d9;
+        font-weight: 300;
+        color: #666;
+        line-height: 1.5;
+        text-align: center;
+        cursor: pointer;
+        &.on {
+          color: #fff;
+          background: #06a4c6;
+          border: none;
+          font-weight: 800;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  &-type {
+    &-normal {
+      min-width: 150px;
+      height: 40px;
+      background: #06a4c6;
+      padding: 0 45px 0 20px;
+      line-height: 40px;
+      font-weight: 600;
+      color: #fff;
+      text-align: left;
+
+      &.ico {
+        text-indent: 0;
+        &:after {
+          left: auto;
+          right: 18px;
+        }
+      }
+    }
+    &-small {
+      min-width: 116px;
+      height: 30px;
+      background: #fff;
+      padding: 0 32px 0 12px;
+      line-height: 30px;
+      border: 1px solid #d9d9d9;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #222;
+      display: inline-block;
+      &.point {
+        background: #f2f2f2;
+      }
+      &.ico {
+        text-indent: 0;
+        &:after {
+          left: auto;
+          right: 14px;
+        }
+      }
+    }
+    &-text{
+      width:42px;
+      height:40px;
+      &.right-btn{
+        background: #06a4c6;
+        border:0;
+      }
+      &.left-btn{
+        background:#fff;
+        border: 1px solid #666;
+      }
+      &.ico {
+        text-indent: 0;
+        &:after {
+          left: auto;
+          right: 18px;
+        }
+      }
+    }
+  }
+}
+
+.text-button{
+  @extend %clearfix;
+  .float-r{
+    float:right;
+  }
+  .float-l{
+    float:left;
+    font-size: 1rem;
+    .middle{
+      position: relative;
+      top: 12px;
+    }
+  }
+  .mr14, %mr14{
+    margin-right: 14px;
+  }
+}
+
+.ico {
+  display: inline-block;
+  position: relative;
+  text-indent: -999em;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(/static/sm/images/spr_ico_global.png) no-repeat;
+  }
+
+  &.arrow-point-right:after{
+    background-position:-129px -64px;
+    width: 8px;
+    height: 12px;
+  }
+  &.arrow-point-left:after{
+    background-position:-246px -33px;
+    width: 8px;
+    height: 12px;
+  }
+  &.arrow-small-right:after{
+    background-position:-158px -65px;
+    width: 6px;
+    height: 10px;
+  }
+  &.download:after{
+    background-position:-68px -98px;
+    width: 13px;
+    height: 12px;
+  }
+
+}
+
+.list1{
+  &-item{
+    margin-top: 4px;
+    padding-left:12px;
+    position:relative;
+    &:first-child{
+      margin-top:0
+    }
+
+    &:before{
+      content: "·";
+      font-size: 	1.625rem;
+      position:absolute;
+      top:-6px;
+      left:0;
+    }
+  }
+}
+
+.list2{
+  &-item{
+    padding-left:12px;
+    line-height: 26px;
+    position:relative;
+
+    &:before{
+      content: "-";
+      font-weight: 300;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+.list3 {
+
+  &:after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+  &-item {
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+    &:before {
+      content: "▶";
+      /*font-size: 0.875rem;*/
+      font-size: 0.75rem;
+      font-weight: normal;
+      color: #06a4c6;
+      position: absolute;
+      top: 3px;
+      left: -1px;
+    }
+
+    &.headline {
+      font-size:1.125rem;
+      color: #06a4c6;
+      margin-bottom: 9px;
+      &.black{
+        color: #444;
+      }
+    }
+
+    &.boxsizing{
+      box-sizing: border-box;
+    }
+  }
+}
+
+.list4{
+  &-item{
+    padding-left:23px;
+    position:relative;
+
+    .number{
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+strong {
+  font-weight: 900;
+
+  &.color-b {
+    color: #06a4c6;
+  }
+}
+
+/*갤러리*/
+.co-gallery{
+  padding: 30px 0;
+  border-top:1px solid #444;
+  border-bottom:1px solid #d9d9d9;
+  &-item{
+    text-align: center;
+    &-img{
+      line-height: 0;
+    }
+    &-title{
+      margin-top: 15px;
+      color: #444;
+    }
+  }
+  .multi-col{
+    &.triple{
+      .inner-col{
+        width: 32%;
+        margin-left:17px;
+        &:first-child{
+          margin:0;
+        }
+      }
+    }
+  }
+}

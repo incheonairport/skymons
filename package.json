@@ -20,7 +20,9 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-include": "^2.3.1",
+    "gulp-index": "^0.1.0",
     "gulp-livereload": "^3.8.1",
+    "gulp-minify": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-watch": "^4.3.11"
