@@ -1,3 +1,46 @@
+.location{
+  //height:15px;
+  margin-bottom: 50px;
+  position: relative;
+
+  &-bar{
+    position: absolute;
+    top: -40px;
+    left: 34px;
+    &-nav{
+      @extend %clearfix;
+
+      &-item {
+        padding-left: 20px;
+        float: left;
+        line-height:1.7;
+        &.ico{
+          text-indent: 0;
+          &:after{
+            top:1px;
+            left: auto;
+            right: -10px;
+          }
+        }
+        .home{
+          &.ico{
+            &:after{
+              top:-2px;
+              left: auto;
+              right: 0;
+            }
+          }
+        }
+        &-link{
+          color: #fff;
+          font-size:0.875rem;
+        }
+      }
+    }
+  }
+}
+
+
 .tab {
   &-nav {
     &-list {
@@ -132,7 +175,17 @@
     margin: auto;
     background: url(/static/sm/images/spr_ico_global.png) no-repeat;
   }
-
+  /* location */
+  &.location-bar-nav-item-link.home:after{
+    background-position:-128px -93px;
+    width: 22px;
+    height: 22px;
+  }
+  &.location-bar-nav-item:after{
+    background-position:-153px -93px;
+    width: 22px;
+    height: 22px;
+  }
   &.arrow-point-right:after{
     background-position:-129px -64px;
     width: 8px;
