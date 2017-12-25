@@ -175,7 +175,9 @@
 
 /*배너*/
 .banner {
-  height: 145px;
+  height: 118px;
+  margin-bottom:25px;
+
   &.player {
     background: url(/static/sm/images/banner1.jpg) no-repeat;
   }
