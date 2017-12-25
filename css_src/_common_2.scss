@@ -40,6 +40,14 @@
   }
 }
 
+//article
+.article{
+  position: relative;
+  margin-bottom:50px;
+  &:last-child{
+    margin-bottom:0;
+  }
+}
 
 .tab {
   &-nav {
@@ -328,4 +336,10 @@ strong {
       }
     }
   }
+}
+
+.board-page {
+  font-size: 0.875rem;
+  text-align: right;
+  margin: 20px 0 10px;
 }

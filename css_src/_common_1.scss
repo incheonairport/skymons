@@ -1205,7 +1205,12 @@
         display: inline-block;
       }
     }
+    &-btn{
+      text-align: right;
+      margin-top: 30px;
+    }
   }
+
 }
 
 // 게시판내 사용되는 아이콘
