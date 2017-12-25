@@ -7,6 +7,10 @@
 
 .contents{
   position:relative;
+
+  &#top-contents{
+    margin-bottom:50px;
+  }
 }
 
 .sub-top {
@@ -185,7 +189,9 @@
 
 /*배너*/
 .banner {
-  height: 145px;
+  height: 118px;
+  margin-bottom:25px;
+
   &.player {
     background: url(/static/sm/images/banner1.jpg) no-repeat;
   }
@@ -950,7 +956,7 @@
 
     border:{
       top:2px solid #444;
-      bottom:1px solid #a5a7aa;
+      //bottom:1px solid #a5a7aa;
     }
 
     tr:first-child{
@@ -1052,6 +1058,9 @@
   }
   .view-head{
     border-bottom:1px solid #d9d9d9;
+
+    @extend %clearfix;
+
     &-tit{
       padding:20px;
       display:block;
@@ -1059,6 +1068,10 @@
       border-bottom:1px solid #d9d9d9;
       &.bg{
         background: #f3f4f8;
+      }
+      &.float-l{
+        float: left;
+        border: 0;
       }
     }
     &-date{
@@ -1098,7 +1111,15 @@
       padding: 30px 30px;
       border-bottom: 1px solid #d9d9d9;
     }
+
   }
+  .photo-gallery{
+     padding:0;
+
+     .photo-top{
+       margin-bottom:20px;
+     }
+   }
   .view-file{
     @extend %clearfix;
     border-top:1px solid #d9d9d9;
