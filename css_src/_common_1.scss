@@ -31,6 +31,16 @@
     position: absolute;
     bottom: 0;
     padding: 0 0 8px 390px;
+
+    &-line{
+      width:1920px;
+      height:84px;
+      //background:rgba(255,255,255, 0.3);
+      border-bottom: 1px solid #fff;
+      position:absolute;
+      bottom:50px;
+      left:0;
+    }
     &-text {
       line-height: 1.2;
       font-size: 4.375rem;
@@ -38,21 +48,21 @@
       color: #fff;
       margin:24px auto;
 
-      &.orange{
-
+      span{
+        color:#fb6c31;
       }
 
-      &:after{
-        content:'';
-        display:block;
-        width:1920px;
-        height:1px;
-        background:#fff;
-        opacity:0.3;
-        position:absolute;
-        bottom:50px;
-        left:0;
-      }
+      //&:after{
+      //  content:'';
+      //  display:block;
+      //  width:1920px;
+      //  height:1px;
+      //  background:#fff;
+      //  opacity:0.3;
+      //  position:absolute;
+      //  bottom:50px;
+      //  left:0;
+      //}
     }
     &-slash{
       font-size:16px;
