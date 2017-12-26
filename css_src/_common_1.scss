@@ -134,12 +134,25 @@
 .left-menu{
   width: 230px;
   float: left;
+
   &-depth1{
+
+    &-item{
+      font-family: nanumsq, sans-serif;
+      font-weight: 700;
+      font-size: 1.625rem;
+    }
+  }
+
+  &-depth2{
+    margin-top: 21px;
     border-bottom: 1px solid #d9d9d9;
     &-item{
       &-link{
-        padding: 10px 15px;
+        font-family: spoqa, sans-serif;
+        padding: 12px 10px;
         font-size: 1.125rem;
+        color: #444;
         border-top: 1px solid #d9d9d9;
         display: block;
         position: relative;
@@ -147,39 +160,6 @@
           border-top:2px solid #5b5b5b;
           color:#e46832;
           font-weight: 800;
-        }
-        &.open{
-          &:after{
-            content: "";
-            color: #666;
-            width: 13px;
-            height: 12px;
-            font-weight: 800;
-            position: absolute;
-            top:15px;
-            right:15px;
-            left:auto;
-            bottom:auto;
-            background: url(/static/co/images/spr_ico_left_menu.png) -32px -2px no-repeat;
-          }
-        }
-        &.close{
-          &:after{
-            content: "";
-            color: #666;
-            width: 13px;
-            height: 12px;
-            font-weight: 800;
-            position: absolute;
-            top:18px;
-            right:15px;
-            left:auto;
-            bottom:auto;
-            background: url(/static/co/images/spr_ico_left_menu.png) -9px -4px no-repeat;
-          }
-          &+.left-menu-depth2{
-            display: none;
-          }
         }
       }
     }
