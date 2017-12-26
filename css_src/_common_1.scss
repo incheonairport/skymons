@@ -25,15 +25,18 @@
     height: 100%;
   }
   &-descbox {
-    display: table-cell;
+    width: 100%;
+    height: 91px;
+    text-align: left;
+    border-bottom:1px solid rgba(221, 221, 221, 0.3);
+    //display: table-cell;
     font-family: nanumsq, sans-serif;
     color: #fff;
     font-size: 2.5rem;
     font-style:italic;
     font-weight: 400;
-    //vertical-align: middle;
     position: absolute;
-    bottom: 0;
+    bottom: 52px;
     padding: 0 0 8px 390px;
 
     &-line{
@@ -51,9 +54,13 @@
       font-weight:300;
       color: #fff;
       margin:24px auto;
+      font-family: roboto, spoqa, sans-serif;
 
       span{
         color:#fb6c31;
+      }
+      span.gray{
+        color:#6b6b6b;
       }
 
       //&:after{
