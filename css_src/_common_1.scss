@@ -183,6 +183,10 @@
     background: url(/static/sm/images/banner1.jpg) no-repeat;
   }
 
+  &.team {
+    background: url(/static/sm/images/bg_banner_2.jpg) no-repeat;
+  }
+
   &-txt{
     font-size: 1.125rem;
     text-align: center;
@@ -265,6 +269,7 @@
       font-weight: 800;
       float: left;
       border-radius:0;
+      font-size: 0.9375rem;
 
       &.ico{
         &:after{

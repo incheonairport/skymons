@@ -1,0 +1,48 @@
+/**/
+.text{
+  &-left{
+   text-align: left;
+  }
+  &-center{
+    text-align: center;
+  }
+  &-right{
+  text-align: right;
+  }
+}
+
+.font16{
+  font-size: 1rem;
+}
+/**/
+.digr-string-pound{
+  height:362px;
+  border: 1px solid #d9d9d9;
+  text-indent:-999em;
+  background: url(/static/sm/images/digr_string_pound.png) no-repeat;
+}
+
+.digr-string-pound-ex{
+  height:428px;
+  border: 1px solid #d9d9d9;
+  text-indent:-999em;
+  background: url(/static/sm/images/digr_string_pound_ex.png) no-repeat;
+}
+
+.label-hide{
+  position: absolute;
+  left: -999em;
+  width: 1em;
+  overflow: hidden;
+}
+
+.sm-team{
+ &-player{
+   &-photo{
+
+     .on{
+
+     }
+   }
+ }
+}
