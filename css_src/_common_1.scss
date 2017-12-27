@@ -1478,6 +1478,73 @@
   }
 }
 
+.list5 {
+  position: relative;
+  &-item {
+    min-height: 130px;
+    padding: 0 0 0 170px;
+    margin-bottom: 30px;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      background: url(/static/sm/images/ico_spr_badminton_rules.png) no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    dd{
+      font-size: 1rem;
+    }
+
+    &-headline {
+      font-size: 1.125rem;
+      color: #06a4c6;
+      margin-bottom: 9px;
+      &:before {
+        content: "▶";
+        font-size: 0.75rem;
+        font-weight: normal;
+        color: #06a4c6;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+
+    &-txt{
+      margin-bottom: 20px;
+    }
+
+    &.rule1 {
+      &:after {
+        width: 130px;
+        height: 130px;
+        background-position: 0 0;
+      }
+    }
+
+    &.rule2 {
+      &:after {
+        width: 130px;
+        height: 130px;
+        background-position: -137px 0;
+      }
+    }
+
+    &.rule3 {
+      &:after {
+        width: 130px;
+        height: 130px;
+        background-position: -275px 0;
+      }
+    }
+  }
+
+}
 
 
 
