@@ -56,6 +56,10 @@
       display: block;
       overflow: hidden;
       border-bottom: 1px solid #323648;
+
+      &.coach-wrap{
+        text-align: center;
+      }
     }
     &-photo{
       display: inline-block;
@@ -113,9 +117,9 @@
       &.on:after{
         background-position-y:0;
       }
-      &.girl{
 
-        &:after{
+      &.girl {
+        &:after {
           content: '';
           display: block;
           position: absolute;
@@ -126,53 +130,78 @@
           margin: auto;
           background: url(/static/sm/images/img_spr_player_girl_small.png) no-repeat;
         }
-        &.player1:after{
+        &.player1:after {
           background-position: 20px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player2:after{
+        &.player2:after {
           background-position: -147px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player3:after{
+        &.player3:after {
           background-position: -325px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player4:after{
+        &.player4:after {
           background-position: -509px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player5:after{
+        &.player5:after {
           background-position: -669px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player6:after{
+        &.player6:after {
           background-position: -836px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player7:after{
+        &.player7:after {
           background-position: -1007px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player8:after{
+        &.player8:after {
           background-position: -1190px -183px;
           width: 130px;
           height: 160px;
         }
-        &.player9:after{
+        &.player9:after {
           background-position: -1354px -183px;
           width: 130px;
           height: 160px;
         }
-        &.on:after{
-          background-position-y:-8px;
+        &.on:after {
+          background-position-y: -8px;
+        }
+      }
+      &.coach{
+        &:after{
+          background: url(/static/sm/images/img_spr_staff.png) no-repeat;
+        }
+        &.staff01{
+          &:after{
+            background-position: -9px 0;
+            width: 135px;
+            height: 160px;
+          }
+          &.on:after{
+            background-position: -342px 0;
+          }
+        }
+        &.staff02{
+          &:after{
+            background-position: -181px 0;
+            width: 135px;
+            height: 160px;
+          }
+          &.on:after{
+            background-position: -514px 0;
+          }
         }
       }
     }
