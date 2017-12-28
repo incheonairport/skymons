@@ -218,7 +218,7 @@
           content: '';
           display: block;
           position: absolute;
-          top: 50%;
+          top: 0;
           right: 0;
           left: 0;
           bottom: 0;
@@ -226,7 +226,7 @@
           background: url(/static/sm/images/spr_ico_control_arrow.png) no-repeat;
         }
         &.prev:after{
-          background-position: -10px -12px;
+          background-position: -10px -10px;
           width: 13px;
           height: 22px;
         }
@@ -234,7 +234,7 @@
           position: relative;
           left: 95%;
           &:after{
-            background-position: -32px -12px;
+            background-position: -32px -10px;
             width: 13px;
             height: 22px;
           }
