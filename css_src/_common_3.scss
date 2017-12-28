@@ -75,43 +75,105 @@
         margin: auto;
         background: url(/static/sm/images/img_spr_player_boy_small.png) no-repeat;
       }
-      &.yim:after{
+      &.player1:after{
         background-position: -35px -194px;
         width: 130px;
         height: 160px;
       }
-      &.hong:after{
+      &.player2:after{
         background-position: -204px -194px;
         width: 130px;
         height: 160px;
       }
-      &.lee:after{
+      &.player3:after{
         background-position: -376px -194px;
         width: 130px;
         height: 160px;
       }
-      &.kim:after{
+      &.player4:after{
         background-position: -550px -194px;
         width: 130px;
         height: 160px;
       }
-      &.jang:after{
+      &.player5:after{
         background-position: -715px -194px;
         width: 130px;
         height: 160px;
       }
-      &.ra:after{
+      &.player6:after{
         background-position: -880px -194px;
         width: 130px;
         height: 160px;
       }
-      &.jang-ho:after{
+      &.player7:after{
         background-position: -1054px -194px;
         width: 130px;
         height: 160px;
       }
       &.on:after{
         background-position-y:0;
+      }
+      &.girl{
+
+        &:after{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/sm/images/img_spr_player_girl_small.png) no-repeat;
+        }
+        &.player1:after{
+          background-position: 20px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player2:after{
+          background-position: -147px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player3:after{
+          background-position: -325px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player4:after{
+          background-position: -509px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player5:after{
+          background-position: -669px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player6:after{
+          background-position: -836px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player7:after{
+          background-position: -1007px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player8:after{
+          background-position: -1190px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player9:after{
+          background-position: -1354px -183px;
+          width: 130px;
+          height: 160px;
+        }
+        &.on:after{
+          background-position-y:-8px;
+        }
       }
     }
     &-control-arrow{
@@ -142,7 +204,7 @@
         &.next {
           position: relative;
           left: 95%;
-          &::after{
+          &:after{
             background-position: -32px -12px;
             width: 13px;
             height: 22px;
@@ -178,4 +240,8 @@
       color: #666;
     }
   }
+}
+
+a, button{
+  cursor: pointer;
 }
