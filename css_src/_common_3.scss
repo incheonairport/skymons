@@ -56,6 +56,10 @@
       display: block;
       overflow: hidden;
       border-bottom: 1px solid #323648;
+
+      &.coach-wrap{
+        text-align: center;
+      }
     }
     &-photo{
       display: inline-block;
@@ -112,6 +116,42 @@
       }
       &.on:after{
         background-position-y:0;
+      }
+
+      &.coach{
+
+        &:after{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/sm/images/img_spr_staff.png) no-repeat;
+        }
+
+        &.staff01{
+          &:after{
+            background-position: -9px 0;
+            width: 135px;
+            height: 160px;
+          }
+          &.on:after{
+            background-position: -342px 0;
+          }
+        }
+        &.staff02{
+          &:after{
+            background-position: -181px 0;
+            width: 135px;
+            height: 160px;
+          }
+          &.on:after{
+            background-position: -514px 0;
+          }
+        }
       }
     }
     &-control-arrow{
