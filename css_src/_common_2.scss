@@ -74,8 +74,8 @@
 
         &.on {
           color: #fff;
-          border: 1px solid #06a4c6;
-          background: #06a4c6;
+          border: 1px solid #06a4c7;
+          background: #06a4c7;
           font-weight: 800;
           height: auto;
           z-index:10;
@@ -91,7 +91,7 @@
     &-normal {
       min-width: 150px;
       height: 40px;
-      background: #06a4c6;
+      background: #06a4c7;
       padding: 0 45px 0 20px;
       line-height: 40px;
       font-weight: 600;
@@ -149,7 +149,7 @@
       width:42px;
       height:40px;
       &.right-btn{
-        background: #06a4c6;
+        background: #06a4c7;
         border:0;
       }
       &.left-btn{
@@ -290,7 +290,7 @@
       /*font-size: 0.875rem;*/
       font-size: 0.75rem;
       font-weight: normal;
-      color: #06a4c6;
+      color: #06a4c7;
       position: absolute;
       top: 3px;
       left: -1px;
@@ -298,7 +298,7 @@
 
     &.headline {
       font-size:1.125rem;
-      color: #06a4c6;
+      color: #06a4c7;
       margin-bottom: 9px;
       &.black{
         color: #444;
@@ -328,7 +328,7 @@ strong {
   font-weight: 900;
 
   &.color-b {
-    color: #06a4c6;
+    color: #06a4c7;
   }
 }
 
@@ -388,7 +388,7 @@ strong {
   &-wrap{
     width: 100%;
     height: 278px;
-    background-color: #06a4c6;
+    background-color: #06a4c7;
     position: relative;
     &.left{
       padding: 60px 30px 60px 255px;
@@ -438,7 +438,7 @@ strong {
 
   &-bottom-txt{
     span{
-      color:#06a4c6;
+      color:#06a4c7;
     }
   }
 
@@ -448,9 +448,65 @@ strong {
 
   &-year{
     font-size: 2.812rem;
-    color: #06a4c6;
+    color: #06a4c7;
     font-weight: 900;
     text-align: center;
+    margin-bottom:45px;
+
+    &-wrap{
+      width: 440px;
+      font-size: 1rem;
+      &.align-l{
+        text-align: left;
+        border-left: 1px solid #d9d9d9;
+        padding-left: 45px;
+        margin-left: 430px;
+      }
+      &.align-r{
+        text-align: right;
+        border-right: 1px solid #d9d9d9;
+        padding-right: 45px;
+      }
+    }
   }
 
+  &-tit{
+    font-size: 1.5rem;
+    font-weight: 700;
+    position:relative;
+    margin-bottom:18px;
+
+    &.after:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12px;
+      right: -50px;
+      width: 9px;
+      height: 9px;
+      background: #06a4c7;
+      border-radius: 50%;
+    }
+    &.before:before{
+      content: '';
+      display: block;
+      width: 9px;
+      height: 9px;
+      background: #06a4c7;
+      position: absolute;
+      top: 12px;
+      left: -50px;
+      border-radius: 50%;
+    }
+  }
+
+  &-txt-wrap{
+    margin-bottom: 45px;
+  }
+
+}
+
+// margin-left:9px;
+.ml9, %ml9{
+  margin-left:9px;
 }
