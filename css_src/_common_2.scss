@@ -47,6 +47,10 @@
   &:last-child{
     margin-bottom:0;
   }
+
+  &.profile-wrap{
+    height:598px;
+  }
 }
 
 .tab {
@@ -186,20 +190,7 @@
 }
 
 .ico {
-  display: inline-block;
-  position: relative;
-  text-indent: -999em;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    background: url(/static/sm/images/spr_ico_global.png) no-repeat;
-  }
+
   /* location */
   &.location-bar-nav-item-link.home:after{
     background-position:-128px -93px;

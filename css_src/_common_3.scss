@@ -47,7 +47,11 @@
   height: 160px;
   display: block;
   &-player{
+    width:100%;
     display: block;
+    overflow:hidden;
+    border-bottom: 1px solid #323648;
+
     @extend %clearfix;
     &-list{
       width: 100%;
@@ -55,19 +59,21 @@
       position: relative;
       display: block;
       overflow: hidden;
-      border-bottom: 1px solid #323648;
 
       &.coach-wrap{
         text-align: center;
       }
     }
     &-photo{
-      display: inline-block;
+      display: block;
       position: relative;
       text-indent: -999em;
       width: 130px;
       height: 160px;
       margin: 0 20px;
+      float:left;
+      cursor:pointer;
+
       &:after{
         content: '';
         display: block;
@@ -80,42 +86,42 @@
         background: url(/static/sm/images/img_spr_player_boy_small.png) no-repeat;
       }
       &.player1:after{
-        background-position: -35px -194px;
+        background-position: -35px -191px;
         width: 130px;
         height: 160px;
       }
       &.player2:after{
-        background-position: -204px -194px;
+        background-position: -204px -191px;
         width: 130px;
         height: 160px;
       }
       &.player3:after{
-        background-position: -376px -194px;
+        background-position: -376px -191px;
         width: 130px;
         height: 160px;
       }
       &.player4:after{
-        background-position: -550px -194px;
+        background-position: -550px -191px;
         width: 130px;
         height: 160px;
       }
       &.player5:after{
-        background-position: -715px -194px;
+        background-position: -715px -191px;
         width: 130px;
         height: 160px;
       }
       &.player6:after{
-        background-position: -880px -194px;
+        background-position: -880px -191px;
         width: 130px;
         height: 160px;
       }
       &.player7:after{
-        background-position: -1054px -194px;
+        background-position: -1054px -191px;
         width: 130px;
         height: 160px;
       }
       &.on:after{
-        background-position-y:0;
+        background-position-y:-1px;
       }
 
       &.girl {
@@ -131,47 +137,47 @@
           background: url(/static/sm/images/img_spr_player_girl_small.png) no-repeat;
         }
         &.player1:after {
-          background-position: 20px -183px;
+          background-position: 20px -182px;
           width: 130px;
           height: 160px;
         }
         &.player2:after {
-          background-position: -147px -183px;
+          background-position: -147px -182px;
           width: 130px;
           height: 160px;
         }
         &.player3:after {
-          background-position: -325px -183px;
+          background-position: -325px -182px;
           width: 130px;
           height: 160px;
         }
         &.player4:after {
-          background-position: -509px -183px;
+          background-position: -509px -182px;
           width: 130px;
           height: 160px;
         }
         &.player5:after {
-          background-position: -669px -183px;
+          background-position: -669px -182px;
           width: 130px;
           height: 160px;
         }
         &.player6:after {
-          background-position: -836px -183px;
+          background-position: -836px -182px;
           width: 130px;
           height: 160px;
         }
         &.player7:after {
-          background-position: -1007px -183px;
+          background-position: -1007px -182px;
           width: 130px;
           height: 160px;
         }
         &.player8:after {
-          background-position: -1190px -183px;
+          background-position: -1190px -182px;
           width: 130px;
           height: 160px;
         }
         &.player9:after {
-          background-position: -1354px -183px;
+          background-position: -1354px -182px;
           width: 130px;
           height: 160px;
         }
@@ -184,36 +190,41 @@
           background: url(/static/sm/images/img_spr_staff.png) no-repeat;
         }
         &.staff01{
+
           &:after{
-            background-position: -9px 0;
+            background-position: -342px 0;
             width: 135px;
             height: 160px;
           }
+
           &.on:after{
-            background-position: -342px 0;
+            background-position: -9px 0;
           }
         }
         &.staff02{
           &:after{
-            background-position: -181px 0;
+            background-position: -514px 0;
             width: 135px;
             height: 160px;
           }
           &.on:after{
-            background-position: -514px 0;
+            background-position: -181px 0;
           }
         }
       }
     }
     &-control-arrow{
-      width: 100%;
-      position: absolute;
-      top: 80px;
+      //width: 100%;
+      //position: absolute;
+      //top: 80px;
+
       .arrow{
-        display: inline-block;
-        position: relative;
+        display: block;
+        position: absolute;
         text-indent: -999em;
         height: 22px;
+        top:80px;
+
         &:after{
           content: '';
           display: block;
@@ -225,16 +236,23 @@
           margin: auto;
           background: url(/static/sm/images/spr_ico_control_arrow.png) no-repeat;
         }
-        &.prev:after{
-          background-position: -10px -10px;
-          width: 13px;
-          height: 22px;
+        &.prev{
+          position:absolute;
+          left:0;
+
+          &:after{
+            background-position: -10px -10px;
+            width: 13px;
+            height: 22px;
+          }
+
         }
         &.next {
-          position: relative;
-          left: 95%;
+          position:absolute;
+          right:0;
+
           &:after{
-            background-position: -32px -10px;
+            background-position: -33px -10px;
             width: 13px;
             height: 22px;
           }
@@ -246,8 +264,18 @@
 /*개인프로필*/
 .individual-profile{
   margin-top: 25px;
-  display: block;
+  position:absolute;
+  top:163px;
+  left:0;
+  width:100%;
+
   @extend %clearfix;
+  display:none;
+
+  &.on{
+    display:block;
+  }
+
   &-player{
     &-name{
       color: #06a4c7;

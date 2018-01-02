@@ -186,7 +186,18 @@
   transition:all .3s ease-out;
 
   &.on{
-    height:345px;
+    height:259px;
+  }
+
+  &:before{
+    content:"";
+    display:block;
+    width:100%;
+    height:215px;
+    background:#fff;
+    position:absolute;
+    top:55px;
+    left:0;
   }
 
   &:after{
@@ -250,12 +261,12 @@
 
   &-depth2{
     height:290px;
-    padding:14px 0 0 20px;
+    padding:25px 0 0 20px;
     border-right:1px solid #ddd;
     box-sizing:border-box;
 
     &-item{
-      margin-bottom:3px;
+      margin-bottom:13px;
     }
 
     &-link{

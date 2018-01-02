@@ -2,7 +2,7 @@
  * Base Class *
  **************/
 
-var Index, HeaderGnb;
+var Index, HeaderGnb, PlayerInfo, PlayerVisual, MainNews, PhotoList;
 
 $(function(){
 
@@ -98,33 +98,17 @@ $(function(){
     var currentVisualIndex = 0;
     var nextVisualIndex = 0;
 
-    var $visualItem = this.$mainVisualItem;
+    var $visualItem = $('.main-top-bg');
     var easingType = this.easingType;
 
     var $pageItem;
 
     var timeID, timeID2;
-    var imageMovingTime = 1000;
-    var imageIntervalTime = 7000;
+    var imageMovingTime = 4000;
+    var imageIntervalTime = 8000;
     var barStretchTime = 10;
 
     // private
-    var _initPaging = function(){
-
-      var $paging = $('<ul class="paging-visual"></ul>');
-
-      $('.main-visual-control-paging').prepend($paging);
-
-      for(var i=0; i<$visualItem.length; i++){
-        $paging.append('<li class="paging-item"><div class="paging-link">' + (i+1) + '</div></li>');
-      }
-
-      $pageItem = $('.paging-item');
-      $pageItem.removeClass('on');
-      $pageItem.eq(0).find('.paging-link').addClass('on');
-
-    };
-
     var _initPosition = function(){
 
       $visualItem.hide().eq(0).show();
@@ -135,81 +119,6 @@ $(function(){
 
       _initPosition();
 
-      _initPaging();
-
-      _timeBar(true);
-
-      setTimeout(function(){
-        _textMotion();
-      }, 1000);
-
-    };
-
-    var _textMotion = function(){
-
-      $visualItem.eq(currentVisualIndex).find('.visual-text').eq(0).stop().animate({
-        opacity:1,
-        left:0
-      }, 1000, 'easeOutCubic')
-          .delay(4000)
-          .queue(function(next){
-            $(this).stop().animate({
-              opacity:0,
-              left:-20
-            }, 500);
-            next();
-          });
-
-      $visualItem.eq(currentVisualIndex).find('.visual-text').eq(1).stop().delay(300).animate({
-        opacity:1,
-        right:0
-      }, 1000, 'easeOutCubic')
-          .delay(4000)
-          .queue(function(next){
-            $(this).stop().animate({
-              opacity:0,
-              right:-20
-            }, 500);
-            next();
-          });
-
-      $visualItem.eq(currentVisualIndex).find('.visual-text').eq(2).stop().delay(600).animate({
-        opacity:1,
-        left:0
-      }, 1000, 'easeOutCubic')
-          .delay(4000)
-          .queue(function(next){
-            $(this).stop().animate({
-              opacity:0,
-              left:-20
-            }, 500);
-            next();
-          });
-
-    };
-
-    var _timeBar = function(auto){
-
-      clearInterval(timeID2);
-
-      var barStretch = 0;
-      var unitLength = 100 / ( imageIntervalTime / barStretchTime );
-
-      $('.paging-link.on').css({height:(100 - barStretch) + '%'});
-
-      if(auto){
-
-        timeID2 = setInterval(function(){
-          $('.paging-link.on').css({height:(100 - barStretch) + '%'});
-          barStretch += unitLength;
-        }, barStretchTime);
-
-      }
-
-    };
-
-    var _setPlayButtonClass = function(status){
-      $('.main-visual-control-paging .play-button').attr('class', 'play-button').addClass(status);
     };
 
     // public
@@ -226,12 +135,7 @@ $(function(){
       }
 
       $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
-      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType, function(){
-        _textMotion();
-      });
-
-      $pageItem.find('.paging-link').removeClass('on');
-      $pageItem.eq(nextVisualIndex).find('.paging-link').addClass('on');
+      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType);
 
       currentVisualIndex = nextVisualIndex;
 
@@ -246,13 +150,7 @@ $(function(){
         nextVisualIndex = currentVisualIndex + 1;
         _fade();
 
-        _timeBar(true);
-
-        //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
-
       }, imageIntervalTime);
-
-      _setPlayButtonClass('pause');
 
     };
 
@@ -262,9 +160,6 @@ $(function(){
 
       nextVisualIndex = currentVisualIndex + 1;
       this.fade();
-      _timeBar(false);
-
-      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
     };
 
@@ -274,9 +169,6 @@ $(function(){
 
       nextVisualIndex = currentVisualIndex - 1;
       this.fade();
-      _timeBar(false);
-
-      //HeaderGnb.setClass(HeaderGnb.getCurrentMainSectionIndex(), nextVisualIndex);
 
     };
 
@@ -287,8 +179,6 @@ $(function(){
 
       // stop time bar
       clearInterval(timeID2);
-
-      _setPlayButtonClass('play');
 
     };
 
@@ -307,6 +197,417 @@ $(function(){
     // running in constructor when loading
     _init();
     this.rollAuto();
+
+  };
+
+  /**
+   * MainNews Class
+   */
+
+  MainNews = function( $listParent ){
+
+    // private
+    var currentVisualIndex = 0;
+    var nextVisualIndex = 0;
+
+    var $visualItem = $listParent.find( $('.main-news-notice-item') );
+    var easingType = this.easingType;
+
+    var timeID;
+    var imageMovingTime = 1000;
+    var imageIntervalTime = 5000;
+
+    // private
+    var _initPosition = function(){
+
+      $visualItem.css({top:'-100%'}).eq(0).css({top:0});
+      $visualItem.eq( $visualItem.length-1 ).css({top:'100%'});
+
+    };
+
+    var _init = function(){
+
+      _initPosition();
+
+    };
+
+    this.moveBottom = function(){
+
+      if( nextVisualIndex >= $visualItem.length ){
+        nextVisualIndex = 0;
+      }
+
+      $visualItem.eq(currentVisualIndex).stop().animate({top:'100%'}, imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).css({top:'-100%'}).stop().animate({top:0}, imageMovingTime, easingType);
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.moveTop = function(){
+
+      if( nextVisualIndex <= -1 ){
+        nextVisualIndex = $visualItem.length-1;
+      }
+
+      $visualItem.eq(currentVisualIndex).stop().animate({top:'-100%'}, imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).css({top:'100%'}).stop().animate({top:0}, imageMovingTime, easingType);
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.rollAuto = function(){
+
+      var _moveBottom = this.moveBottom;
+
+      timeID = setInterval(function(){
+
+        nextVisualIndex = currentVisualIndex + 1;
+        _moveBottom();
+
+      }, imageIntervalTime);
+
+    };
+
+    this.rollBottom = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex + 1;
+      this.moveBottom();
+
+    };
+
+    this.rollTop = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex - 1;
+      this.moveTop();
+
+    };
+
+    this.rollStop = function(){
+
+      // stop rolling
+      clearInterval(timeID);
+
+    };
+
+    this.checkAnimate = function(){
+
+      return this.$mainVisualItem.is(':animated');
+
+    };
+
+    this.getNextVisualIndex = function(){
+
+      return nextVisualIndex;
+
+    };
+
+    // public
+
+
+    // running in constructor when loading
+    _init();
+    this.rollAuto();
+
+  };
+
+  /**
+   * PlayerVisual Class
+   */
+
+  PlayerVisual = new function(){
+
+    // private
+    var currentVisualIndex = 0;
+    var nextVisualIndex = 0;
+
+    var $visualItem = $('.main-member-list-item');
+    var easingType = this.easingType;
+
+    var timeID, timeID2;
+    var imageMovingTime = 1000;
+    var imageIntervalTime = 7000;
+
+    // private
+    var _initPosition = function(){
+
+      $visualItem.hide().eq(0).show();
+
+    };
+
+    var _init = function(){
+
+      _initPosition();
+
+    };
+
+    // public
+    this.fade = function(){
+
+      if( nextVisualIndex >= $visualItem.length ){
+
+        nextVisualIndex = 0;
+
+      } else if( nextVisualIndex <= -1 ){
+
+        nextVisualIndex = $visualItem.length-1;
+
+      }
+
+      $visualItem.eq(currentVisualIndex).stop().fadeOut(imageMovingTime, easingType);
+      $visualItem.eq(nextVisualIndex).stop().fadeIn(imageMovingTime, easingType);
+
+      currentVisualIndex = nextVisualIndex;
+
+    };
+
+    this.rollAuto = function(){
+
+      var _fade = this.fade;
+
+      timeID = setInterval(function(){
+
+        nextVisualIndex = currentVisualIndex + 1;
+        _fade();
+
+      }, imageIntervalTime);
+
+    };
+
+    this.rollLeft = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex + 1;
+      this.fade();
+
+    };
+
+    this.rollRight = function(){
+
+      this.rollStop();
+
+      nextVisualIndex = currentVisualIndex - 1;
+      this.fade();
+
+    };
+
+    this.rollStop = function(){
+
+      // stop rolling
+      clearInterval(timeID);
+
+      // stop time bar
+      clearInterval(timeID2);
+
+    };
+
+    this.checkAnimate = function(){
+
+      return $visualItem.is(':animated');
+
+    };
+
+    this.getNextVisualIndex = function(){
+
+      return nextVisualIndex;
+
+    };
+
+    // running in constructor when loading
+    _init();
+    //this.rollAuto();
+
+  };
+
+  /**
+   * PlayerInfo Class
+   */
+
+  PlayerInfo = new function(){
+
+    var photoWidth;
+    var listWidth;
+    var $visualItem = $('.team-profile-player-list');
+    var photoLength = $('.team-profile-player-photo').length;
+    var outerPhotoLength = photoLength - 5;
+
+    var _init = function(){
+
+      photoWidth = $('.team-profile-player-photo').outerWidth() + 40;
+      listWidth = photoWidth * photoLength;
+      $('.team-profile-player-list').width(listWidth);
+
+    };
+
+    this.setURLCurrentMember = function(){
+
+      var memberIndex = parseInt( window.location.hash.replace('#member', '') ) - 1;
+      var moveIndex = 0;
+
+      $('#search-player').val(window.location.hash).prop('selected', true);
+
+      $('.team-profile-player-photo').removeClass('on');
+      $('.team-profile-player-photo').eq(memberIndex).addClass('on');
+
+      $('.individual-profile').removeClass('on');
+      $('.individual-profile').eq(memberIndex).addClass('on');
+
+      if( memberIndex <= 2 ){
+
+        moveIndex = 0;
+
+      } else if( memberIndex >= photoLength - 2 ) {
+
+        moveIndex = photoLength - 5;
+
+      } else {
+
+        moveIndex = memberIndex - 2;
+
+      }
+
+      if( $('.team-profile-player-list').hasClass('coach-wrap') ){
+
+        $('.team-profile-player-list').css({left:260});
+
+      } else {
+
+        $('.team-profile-player-list').stop().animate({
+          left : -(moveIndex * photoWidth)
+        });
+
+      }
+
+
+
+    };
+
+    this.left = function(){
+
+      var currentLeft =  parseInt( $visualItem.css('left') );
+
+      if( parseInt( $visualItem.css('left') ) >= -(photoWidth * outerPhotoLength) && parseInt( $('.team-profile-player-list').css('left') ) < 0 ){
+
+        $visualItem.stop().animate({
+
+          left : currentLeft + photoWidth
+
+        });
+
+      }
+
+    };
+
+    this.right = function(){
+
+      var currentLeft =  parseInt( $visualItem.css('left') );
+
+      if( parseInt( $visualItem.css('left') ) > -(photoWidth * outerPhotoLength) && parseInt( $('.team-profile-player-list').css('left') ) <= 0 ){
+
+        $visualItem.stop().animate({
+
+          left : currentLeft - photoWidth
+
+        });
+
+      }
+
+    };
+
+    this.checkAnimate = function(){
+
+      return $visualItem.is(':animated');
+
+    };
+
+    _init();
+
+  };
+
+  /**
+   * PhotoList Class
+   */
+
+  PhotoList = new function(){
+
+    var photoWidth;
+    var listWidth;
+    var $visualItem = $('.photo-list');
+    var photoLength = $('.photo-list-item').length;
+    var outerPhotoLength = photoLength - 4;
+
+    var _init = function(){
+
+      photoWidth = $('.photo-list-item').outerWidth() + 14;
+      listWidth = photoWidth * photoLength;
+      $('.photo-list').width(listWidth);
+
+    };
+
+    this.setURLCurrentMember = function(){
+
+      var memberIndex = $('.photo-list-link').index( $('.photo-list-link.on') );
+
+      $('.photo-list-link').removeClass('on');
+      $('.photo-list-link').eq(memberIndex).addClass('on');
+
+      if( memberIndex >= photoLength - 3 ) {
+
+        memberIndex = photoLength - 4;
+
+      }
+
+      $visualItem.stop().animate({
+        left : -(memberIndex * photoWidth)
+      });
+
+    };
+
+    this.left = function(){
+
+      var currentLeft =  parseInt( $visualItem.css('left') );
+
+      if( parseInt( $visualItem.css('left') ) >= -(photoWidth * outerPhotoLength) && parseInt( $visualItem.css('left') ) < 0 ){
+
+        $visualItem.stop().animate({
+
+          left : currentLeft + photoWidth
+
+        });
+
+      }
+
+    };
+
+    this.right = function(){
+
+      var currentLeft =  parseInt( $visualItem.css('left') );
+
+      if( parseInt( $visualItem.css('left') ) > -(photoWidth * outerPhotoLength) && parseInt( $visualItem.css('left') ) <= 0 ){
+
+        $visualItem.stop().animate({
+
+          left : currentLeft - photoWidth
+
+        });
+
+      }
+
+    };
+
+    this.checkAnimate = function(){
+
+      return $visualItem.is(':animated');
+
+    };
+
+    _init();
 
   };
 

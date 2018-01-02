@@ -25,11 +25,36 @@ $(function(){
    * loading
    */
 
-  var scrollHeight;
+  // 메인 페이지 로딩
+  var playerNews, matchNews;
+  (function(){
 
-  $('.gnb').append('<div class="scroll-amount"></div>');
+    playerNews = new MainNews( $('.player-news') );
+    matchNews = new MainNews( $('.match-news') );
 
+  })();
 
+  // 선수단 페이지 로딩
+  (function(){
+
+    if( $('div').hasClass('team-profile-player') ){
+
+      if( window.location.hash == '' ){
+        window.location.hash = '#member1';
+      }
+
+      PlayerInfo.setURLCurrentMember();
+
+    }
+
+  })();
+
+  // 포토리스트 페이지 로딩
+  (function(){
+
+    PhotoList.setURLCurrentMember();
+
+  })();
 
 
   /**
@@ -67,36 +92,6 @@ $(function(){
   // 공통 이벤트
   (function(){
 
-    $(window).on('resize', function(){
-
-      scrollHeight = $('body').height() - $(window).height();
-
-    }).resize();
-
-    $(window).on('scroll', function(){
-
-      if( !$('.total-search').hasClass('show') ){
-
-        var scrollAmount = ( $(this).scrollTop() / scrollHeight ) * 100;
-
-        $('.scroll-amount').css({width : scrollAmount + '%'});
-
-        if( $(this).scrollTop() >= 200 ){
-
-          $('.header, .gnb').addClass('down');
-          $('.total-search').addClass('down');
-
-        } else if( $(this).scrollTop() < 200 ){
-
-          $('.header, .gnb').removeClass('down');
-          $('.total-search').removeClass('down');
-
-        }
-
-      }
-
-    }).scroll();
-
     // Layer Popup 닫기
     $('.layer-close').on('click', function(){
 
@@ -108,6 +103,18 @@ $(function(){
 
   // 메인 페이지 이벤트
   (function(){
+
+    $('.main-news-title').on('click', function(){
+
+      var tabIndex = $('.main-news-title').index( $(this) );
+
+      $('.main-news-title').removeClass('on');
+      $(this).addClass('on');
+
+      $('.main-news-text').removeClass('on');
+      $('.main-news-text').eq(tabIndex).addClass('on');
+
+    });
 
     $('.main-visual-control-arrow .arrow.prev').on('click', function(){
 
@@ -138,6 +145,86 @@ $(function(){
       } else {
 
         MainVisual.rollAuto();
+
+      }
+
+    });
+
+    $('.main-member-btn.prev').on('click', function(){
+
+      if( !PlayerVisual.checkAnimate() ){
+
+        PlayerVisual.rollRight();
+
+      }
+
+    });
+
+    $('.main-member-btn.next').on('click', function(){
+
+      if( !PlayerVisual.checkAnimate() ){
+
+        PlayerVisual.rollLeft();
+
+      }
+
+    });
+
+    $('.main-news-notice-btn.prev').on('click', function(){
+
+      if( $(this).parents('.main-news-text').hasClass('player-news') ){
+        if( !playerNews.checkAnimate() ) {
+          playerNews.rollTop();
+        }
+      } else {
+        if(!matchNews.checkAnimate()) {
+          matchNews.rollTop();
+        }
+      }
+
+      $(this).siblings('.play-button').removeClass('pause').addClass('play');
+
+    });
+
+    $('.main-news-notice-btn.next').on('click', function(){
+
+      if( $(this).parents('.main-news-text').hasClass('player-news') ){
+
+        if( !playerNews.checkAnimate() ){
+          playerNews.rollBottom();
+        }
+
+      } else {
+        if(!matchNews.checkAnimate()){
+          matchNews.rollBottom();
+        }
+      }
+
+      $(this).siblings('.play-button').removeClass('pause').addClass('play');
+
+    });
+
+    $('.main-news-notice-btn.play-button').on('click', function(){
+
+      if( $(this).hasClass('pause') ){
+
+        if( $(this).parents('.main-news-text').hasClass('player-news') ){
+          playerNews.rollStop();
+        } else {
+          matchNews.rollStop();
+        }
+
+        $(this).removeClass('pause').addClass('play');
+
+      } else {
+
+        if( $(this).parents('.main-news-text').hasClass('player-news') ){
+          playerNews.rollAuto();
+        } else {
+          matchNews.rollAuto();
+        }
+
+        $(this).removeClass('play').addClass('pause');
 
       }
 
@@ -190,6 +277,64 @@ $(function(){
           $(this).removeClass('close').addClass('on open').data('open', true);
         }
 
+      }
+
+    });
+
+  })();
+
+  // 선수단 리스트 페이지 이벤트
+  (function(){
+
+    $('.arrow.prev').on('click', function(){
+      if( !PlayerInfo.checkAnimate() ){
+        PlayerInfo.left();
+      }
+    });
+
+    $('.arrow.next').on('click', function(){
+      if( !PlayerInfo.checkAnimate() ){
+        PlayerInfo.right();
+      }
+    });
+
+    $('.team-profile-player-photo').on('click', function(){
+
+      window.location.hash = $(this).data().value;
+
+      if(!PlayerInfo.checkAnimate()){
+        PlayerInfo.setURLCurrentMember() ;
+      }
+
+    });
+
+    $('.search-box-btn').on('click', function(){
+
+      window.location.hash = $('#search-player option:selected').val();
+
+      if(!PlayerInfo.checkAnimate()){
+        PlayerInfo.setURLCurrentMember() ;
+      }
+
+    });
+
+  })();
+
+  // 포토 리스트 페이지 이벤트
+  (function(){
+
+    $('.photo-thumb-btn.prev').on('click', function(){
+
+      if( !PhotoList.checkAnimate() ){
+        PhotoList.left();
+      }
+
+    });
+
+    $('.photo-thumb-btn.next').on('click', function(){
+
+      if( !PhotoList.checkAnimate() ){
+        PhotoList.right();
       }
 
     });
