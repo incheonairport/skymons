@@ -108,6 +108,11 @@
           left: auto;
           right: 18px;
         }
+
+        &.center{
+          text-align: center;
+          padding: 0
+        }
       }
       &.btn2{
         min-width: 106px;
@@ -501,4 +506,24 @@ strong {
 // margin-left:9px;
 .ml9, %ml9{
   margin-left:9px;
+}
+
+//input
+.user-text {
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+
+  &.wide {
+    width: 100%;
+  }
+  &.height{
+    height:200px;
+    padding:15px;
+    line-height: 1.5;
+  }
 }
