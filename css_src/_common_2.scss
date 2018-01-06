@@ -1,12 +1,12 @@
 .location{
-  //height:15px;
-  margin-bottom: 50px;
-  position: relative;
+  //margin-bottom: 50px;
+  height:52px;
+  position: absolute;
+  top: 382px;
+  left: 34px;
 
   &-bar{
-    position: absolute;
-    top: -40px;
-    left: 34px;
+
     &-nav{
       @extend %clearfix;
 
@@ -40,21 +40,31 @@
   }
 }
 
+//article
+.article{
+  position: relative;
+  margin-bottom:50px;
+  &:last-child{
+    margin-bottom:0;
+  }
+
+  &.profile-wrap{
+    height:598px;
+  }
+}
 
 .tab {
   &-nav {
     &-list {
       @extend %clearfix;
       width: 100%;
+
       &-item {
-        width:25%;
+        width:calc(25% + 1px);
         float: left;
-        &+.tab-nav-list-item{
-          a{
-            border-left: 1px;
-          }
-        }
+        margin-right:-1px;
       }
+
       &-link {
         padding:20px 0;
         display: block;
@@ -65,12 +75,15 @@
         line-height: 1.5;
         text-align: center;
         cursor: pointer;
+
         &.on {
           color: #fff;
-          background: #06a4c6;
-          border: none;
+          border: 1px solid #06a4c7;
+          background: #06a4c7;
           font-weight: 800;
           height: auto;
+          z-index:10;
+          position:relative;
         }
       }
     }
@@ -82,7 +95,7 @@
     &-normal {
       min-width: 150px;
       height: 40px;
-      background: #06a4c6;
+      background: #06a4c7;
       padding: 0 45px 0 20px;
       line-height: 40px;
       font-weight: 600;
@@ -94,6 +107,27 @@
         &:after {
           left: auto;
           right: 18px;
+        }
+
+        &.center{
+          text-align: center;
+          padding: 0
+        }
+      }
+      &.btn2{
+        min-width: 106px;
+        height: 33px;
+        background: #fff;
+        padding: 0 45px 0 20px;
+        line-height: 33px;
+        font-size:0.875rem;
+        color: #444;
+        text-align: left;
+        border: 1px solid #d9d9d9;
+
+        &.float-r{
+          float: right;
+          top: 16px;
         }
       }
     }
@@ -124,7 +158,7 @@
       width:42px;
       height:40px;
       &.right-btn{
-        background: #06a4c6;
+        background: #06a4c7;
         border:0;
       }
       &.left-btn{
@@ -161,20 +195,7 @@
 }
 
 .ico {
-  display: inline-block;
-  position: relative;
-  text-indent: -999em;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    background: url(/static/sm/images/spr_ico_global.png) no-repeat;
-  }
+
   /* location */
   &.location-bar-nav-item-link.home:after{
     background-position:-128px -93px;
@@ -185,6 +206,11 @@
     background-position:-153px -93px;
     width: 22px;
     height: 22px;
+  }
+  &.arrow-right:after{
+    background-position:-157px -64px;
+    width: 8px;
+    height: 12px;
   }
   &.arrow-point-right:after{
     background-position:-129px -64px;
@@ -260,7 +286,7 @@
       /*font-size: 0.875rem;*/
       font-size: 0.75rem;
       font-weight: normal;
-      color: #06a4c6;
+      color: #06a4c7;
       position: absolute;
       top: 3px;
       left: -1px;
@@ -268,7 +294,7 @@
 
     &.headline {
       font-size:1.125rem;
-      color: #06a4c6;
+      color: #06a4c7;
       margin-bottom: 9px;
       &.black{
         color: #444;
@@ -294,21 +320,33 @@
   }
 }
 
+
 strong {
   font-weight: 900;
 
   &.color-b {
-    color: #06a4c6;
+    color: #06a4c7;
   }
 }
 
 /*갤러리*/
 .co-gallery{
-  padding: 30px 0;
+  padding: 30px 0 0;
   border-top:1px solid #444;
   border-bottom:1px solid #d9d9d9;
+
+  @extend %clearfix;
+
   &-item{
+    margin:0 21px 30px 0;
+
+    float:left;
     text-align: center;
+
+    &:nth-child(3n){
+      margin-right:0;
+    }
+
     &-img{
       line-height: 0;
     }
@@ -317,15 +355,175 @@ strong {
       color: #444;
     }
   }
-  .multi-col{
-    &.triple{
-      .inner-col{
-        width: 32%;
-        margin-left:17px;
-        &:first-child{
-          margin:0;
-        }
+
+}
+
+.board-page {
+  font-size: 0.875rem;
+  text-align: right;
+  margin: 20px 0 10px;
+}
+
+.guide-desc {
+  display: block;
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.875rem;
+  &.mark {
+    line-height: 24px;
+    text-indent: -20px;
+    padding-left: 20px;
+
+    &:before {
+      content: "※";
+      margin-right: 2px;
+    }
+  }
+}
+
+.message{
+  &-wrap{
+    width: 100%;
+    height: 278px;
+    background-color: #06a4c7;
+    position: relative;
+    &.left{
+      padding: 60px 30px 60px 255px;
+    }
+    &.right{
+      padding: 60px 255px 60px 30px;
+    }
+  }
+
+  &-txt-tit{
+    font-size: 1.687rem;
+    color: #fff;
+    font-family: 'nanumsq', sans-serif;
+  }
+
+  &-txt{
+    font-size: 1.125rem;
+    color: #fff;
+
+    &:before{
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #fff;
+      margin: 22px 0;
+    }
+  }
+
+  &-img{
+    position: absolute;
+    top:0;
+
+    &.left{
+      left: 0;
+    }
+    &.right{
+      right:0;
+    }
+  }
+
+  &-img2{
+    position: absolute;
+    bottom: 53px;
+    right: 195px;
+  }
+
+  &-bottom-txt{
+    span{
+      color:#06a4c7;
+    }
+  }
+
+}
+
+.team-history{
+
+  &-year{
+    font-size: 2.812rem;
+    color: #06a4c7;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom:45px;
+
+    &-wrap{
+      width: 440px;
+      font-size: 1rem;
+      &.align-l{
+        text-align: left;
+        border-left: 1px solid #d9d9d9;
+        padding-left: 45px;
+        margin-left: 430px;
+      }
+      &.align-r{
+        text-align: right;
+        border-right: 1px solid #d9d9d9;
+        padding-right: 45px;
       }
     }
+  }
+
+  &-tit{
+    font-size: 1.5rem;
+    font-weight: 700;
+    position:relative;
+    margin-bottom:18px;
+
+    &.after:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12px;
+      right: -50px;
+      width: 9px;
+      height: 9px;
+      background: #06a4c7;
+      border-radius: 50%;
+    }
+    &.before:before{
+      content: '';
+      display: block;
+      width: 9px;
+      height: 9px;
+      background: #06a4c7;
+      position: absolute;
+      top: 12px;
+      left: -50px;
+      border-radius: 50%;
+    }
+  }
+
+  &-txt-wrap{
+    margin-bottom: 45px;
+  }
+
+}
+
+// margin-left:9px;
+.ml9, %ml9{
+  margin-left:9px;
+}
+
+//input
+.user-text {
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+
+  &.wide {
+    width: 100%;
+  }
+  &.height{
+    height:200px;
+    padding:15px;
+    line-height: 1.5;
   }
 }

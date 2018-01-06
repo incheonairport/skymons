@@ -1,0 +1,304 @@
+/**/
+.text{
+  &-left{
+   text-align: left;
+  }
+  &-center{
+    text-align: center;
+  }
+  &-right{
+  text-align: right;
+  }
+}
+
+.font16{
+  font-size: 1rem;
+}
+/**/
+.digr-string-pound{
+  height:362px;
+  border: 1px solid #d9d9d9;
+  text-indent:-999em;
+  background: url(/static/sm/images/digr_string_pound.png) no-repeat;
+}
+
+.digr-string-pound-ex{
+  height:428px;
+  border: 1px solid #d9d9d9;
+  text-indent:-999em;
+  background: url(/static/sm/images/digr_string_pound_ex.png) no-repeat;
+}
+
+.label-hide{
+  position: absolute;
+  left: -999em;
+  width: 1em;
+  overflow: hidden;
+}
+
+.sm-team{
+  position: relative;
+  display: block;
+
+}
+
+/*선수단사진*/
+.team-profile{
+  height: 160px;
+  display: block;
+  &-player{
+    width:100%;
+    display: block;
+    overflow:hidden;
+    border-bottom: 1px solid #323648;
+
+    @extend %clearfix;
+    &-list{
+      width: 100%;
+      height: 160px;
+      position: relative;
+      display: block;
+      overflow: hidden;
+
+      &.coach-wrap{
+        text-align: center;
+      }
+    }
+    &-photo{
+      display: block;
+      position: relative;
+      text-indent: -999em;
+      width: 130px;
+      height: 160px;
+      margin: 0 20px;
+      float:left;
+      cursor:pointer;
+
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        background: url(/static/sm/images/img_spr_player_boy_small.png) no-repeat;
+      }
+      &.player1:after{
+        background-position: -35px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.player2:after{
+        background-position: -204px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.player3:after{
+        background-position: -376px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.player4:after{
+        background-position: -550px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.player5:after{
+        background-position: -715px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.player6:after{
+        background-position: -880px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.player7:after{
+        background-position: -1054px -191px;
+        width: 130px;
+        height: 160px;
+      }
+      &.on:after{
+        background-position-y:-1px;
+      }
+
+      &.girl {
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/sm/images/img_spr_player_girl_small.png) no-repeat;
+        }
+        &.player1:after {
+          background-position: 20px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player2:after {
+          background-position: -147px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player3:after {
+          background-position: -325px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player4:after {
+          background-position: -509px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player5:after {
+          background-position: -669px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player6:after {
+          background-position: -836px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player7:after {
+          background-position: -1007px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player8:after {
+          background-position: -1190px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.player9:after {
+          background-position: -1354px -182px;
+          width: 130px;
+          height: 160px;
+        }
+        &.on:after {
+          background-position-y: -8px;
+        }
+      }
+      &.coach{
+        &:after{
+          background: url(/static/sm/images/img_spr_staff.png) no-repeat;
+        }
+        &.staff01{
+
+          &:after{
+            background-position: -342px 0;
+            width: 135px;
+            height: 160px;
+          }
+
+          &.on:after{
+            background-position: -9px 0;
+          }
+        }
+        &.staff02{
+          &:after{
+            background-position: -514px 0;
+            width: 135px;
+            height: 160px;
+          }
+          &.on:after{
+            background-position: -181px 0;
+          }
+        }
+      }
+    }
+    &-control-arrow{
+      //width: 100%;
+      //position: absolute;
+      //top: 80px;
+
+      .arrow{
+        display: block;
+        position: absolute;
+        text-indent: -999em;
+        height: 22px;
+        top:80px;
+
+        &:after{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          background: url(/static/sm/images/spr_ico_control_arrow.png) no-repeat;
+        }
+        &.prev{
+          position:absolute;
+          left:0;
+
+          &:after{
+            background-position: -10px -10px;
+            width: 13px;
+            height: 22px;
+          }
+
+        }
+        &.next {
+          position:absolute;
+          right:0;
+
+          &:after{
+            background-position: -33px -10px;
+            width: 13px;
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+/*개인프로필*/
+.individual-profile{
+  margin-top: 25px;
+  position:absolute;
+  top:163px;
+  left:0;
+  width:100%;
+
+  @extend %clearfix;
+  display:none;
+
+  &.on{
+    display:block;
+  }
+
+  &-player{
+    &-name{
+      color: #06a4c7;
+      font-size:	1.5rem;
+      font-weight: 900;
+      &-en{
+        margin-top: 20px;
+        color: #222;
+        font-size: 1.125rem;
+        font-weight: 800;
+      }
+    }
+    &-other{
+      font-weight: 800;
+    }
+    .list1{
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #666;
+    }
+  }
+}
+
+a, button{
+  cursor: pointer;
+}

@@ -7,6 +7,10 @@
 
 .contents{
   position:relative;
+
+  &#top-contents{
+    margin-bottom:50px;
+  }
 }
 
 .sub-top {
@@ -21,38 +25,55 @@
     height: 100%;
   }
   &-descbox {
-    display: table-cell;
+    width: 100%;
+    height: 91px;
+    text-align: left;
+    border-bottom:1px solid rgba(221, 221, 221, 0.3);
+    //display: table-cell;
     font-family: nanumsq, sans-serif;
     color: #fff;
     font-size: 2.5rem;
     font-style:italic;
     font-weight: 400;
-    //vertical-align: middle;
     position: absolute;
-    bottom: 0;
+    bottom: 52px;
     padding: 0 0 8px 390px;
+
+    &-line{
+      width:1920px;
+      height:84px;
+      //background:rgba(255,255,255, 0.3);
+      border-bottom: 1px solid #fff;
+      position:absolute;
+      bottom:50px;
+      left:0;
+    }
     &-text {
       line-height: 1.2;
       font-size: 4.375rem;
       font-weight:300;
       color: #fff;
       margin:24px auto;
+      font-family: roboto, spoqa, sans-serif;
 
-      &.orange{
-
+      span{
+        color:#fb6c31;
+      }
+      span.gray{
+        color:#6b6b6b;
       }
 
-      &:after{
-        content:'';
-        display:block;
-        width:1920px;
-        height:1px;
-        background:#fff;
-        opacity:0.3;
-        position:absolute;
-        bottom:50px;
-        left:0;
-      }
+      //&:after{
+      //  content:'';
+      //  display:block;
+      //  width:1920px;
+      //  height:1px;
+      //  background:#fff;
+      //  opacity:0.3;
+      //  position:absolute;
+      //  bottom:50px;
+      //  left:0;
+      //}
     }
     &-slash{
       font-size:16px;
@@ -120,12 +141,25 @@
 .left-menu{
   width: 230px;
   float: left;
+
   &-depth1{
+
+    &-item{
+      font-family: nanumsq, sans-serif;
+      font-weight: 700;
+      font-size: 1.625rem;
+    }
+  }
+
+  &-depth2{
+    margin-top: 21px;
     border-bottom: 1px solid #d9d9d9;
     &-item{
       &-link{
-        padding: 10px 15px;
+        font-family: spoqa, sans-serif;
+        padding: 12px 10px;
         font-size: 1.125rem;
+        color: #444;
         border-top: 1px solid #d9d9d9;
         display: block;
         position: relative;
@@ -133,39 +167,6 @@
           border-top:2px solid #5b5b5b;
           color:#e46832;
           font-weight: 800;
-        }
-        &.open{
-          &:after{
-            content: "";
-            color: #666;
-            width: 13px;
-            height: 12px;
-            font-weight: 800;
-            position: absolute;
-            top:15px;
-            right:15px;
-            left:auto;
-            bottom:auto;
-            background: url(/static/co/images/spr_ico_left_menu.png) -32px -2px no-repeat;
-          }
-        }
-        &.close{
-          &:after{
-            content: "";
-            color: #666;
-            width: 13px;
-            height: 12px;
-            font-weight: 800;
-            position: absolute;
-            top:18px;
-            right:15px;
-            left:auto;
-            bottom:auto;
-            background: url(/static/co/images/spr_ico_left_menu.png) -9px -4px no-repeat;
-          }
-          &+.left-menu-depth2{
-            display: none;
-          }
         }
       }
     }
@@ -175,9 +176,15 @@
 
 /*배너*/
 .banner {
-  height: 145px;
+  height: 118px;
+  margin-bottom:25px;
+
   &.player {
     background: url(/static/sm/images/banner1.jpg) no-repeat;
+  }
+
+  &.team {
+    background: url(/static/sm/images/bg_banner_2.jpg) no-repeat;
   }
 
   &-txt{
@@ -262,6 +269,7 @@
       font-weight: 800;
       float: left;
       border-radius:0;
+      font-size: 0.9375rem;
 
       &.ico{
         &:after{
@@ -330,7 +338,36 @@
     width: 20px;
     height: 19px;
   }
-  /*pagenation-list e*/
+
+  &.ig:after{
+    background-position:-31px -28px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.fb:after{
+    background-position:-69px -28px;
+    width: 9px;
+    height: 20px;
+  }
+
+  &.tt:after{
+    background-position:-98px -29px;
+    width: 21px;
+    height: 19px;
+  }
+
+  &.yb:after{
+    background-position:-133px -31px;
+    width: 20px;
+    height: 14px;
+  }
+
+  &.arrow_down:after{
+    background-position:-67px -67px;
+    width: 12px;
+    height: 7px;
+  }
 
 }
 
@@ -555,6 +592,10 @@
       &.list-mg-inner{
         margin-left: 0;
       }
+
+      &.ml9{
+        margin-left:9px;
+      }
     }
   }
   &.balance{
@@ -595,6 +636,13 @@
         width: 100%;
       }
 
+      &.ml4{
+        margin-left:4px;
+      }
+
+      &.ml9{
+        margin-left:9px;
+      }
 
     }
     img{
@@ -1042,6 +1090,9 @@
   }
   .view-head{
     border-bottom:1px solid #d9d9d9;
+
+    @extend %clearfix;
+
     &-tit{
       padding:20px;
       display:block;
@@ -1049,6 +1100,10 @@
       border-bottom:1px solid #d9d9d9;
       &.bg{
         background: #f3f4f8;
+      }
+      &.float-l{
+        float: left;
+        border: 0;
       }
     }
     &-date{
@@ -1088,7 +1143,123 @@
       padding: 30px 30px;
       border-bottom: 1px solid #d9d9d9;
     }
+
+    &-img{
+      width:100%;
+      margin-bottom:30px;
+    }
+
   }
+
+  .photo-gallery{
+     padding:0;
+
+    .photo-top{
+      margin-bottom:20px;
+      img{
+        display:block;
+        width:870px;
+        height:520px;
+      }
+    }
+
+    .photo-thumb{
+      padding:0 30px;
+      position:relative;
+    }
+
+    .photo-list{
+      position:relative;
+      @extend %clearfix;
+
+      &-wrap{
+        width:810px;
+        overflow:hidden;
+      }
+
+      &-item{
+        width:192px;
+        //height:114px;
+        margin-right:14px;
+        float:left;
+
+        &:last-child{
+          margin-right:0;
+        }
+      }
+
+      &-link{
+        display:block;
+        width:100%;
+
+        .thumb{
+          display:block;
+          width:192px;
+          height:114px;
+
+          &-wrap{
+            display:block;
+            position:relative;
+
+          }
+        }
+
+        .title{
+          display:block;
+          text-align:center;
+          margin-top:13px;
+        }
+
+        .date{
+          display:block;
+          text-align:center;
+        }
+
+        &.on{
+
+          .thumb-wrap{
+            &:after{
+              content:"";
+              display:block;
+              width:100%;
+              height:100%;
+              border:3px solid #000;
+              position:absolute;
+              top:0;
+              left:0;
+              box-sizing:border-box;
+            }
+          }
+
+        }
+      }
+    }
+
+    .photo-thumb-btn{
+      display:block;
+      width:11px;
+      height:19px;
+      padding:0;
+      border:none;
+      background:url(/static/sm/images/spr_photo_list_btn.png) no-repeat;
+      text-indent:-99999em;
+
+      position:absolute;
+      top:46px;
+
+      &.prev{
+        left:0;
+      }
+
+      &.next{
+        background-position:-27px 0;
+        right:0;
+      }
+
+    }
+
+   }
+
   .view-file{
     @extend %clearfix;
     border-top:1px solid #d9d9d9;
@@ -1195,7 +1366,12 @@
         display: inline-block;
       }
     }
+    &-btn{
+      text-align: right;
+      margin-top: 30px;
+    }
   }
+
 }
 
 // 게시판내 사용되는 아이콘
@@ -1450,6 +1626,73 @@
   }
 }
 
+.list5 {
+  position: relative;
+  &-item {
+    min-height: 130px;
+    padding: 0 0 0 170px;
+    margin-bottom: 30px;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      background: url(/static/sm/images/ico_spr_badminton_rules.png) no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    dd{
+      font-size: 1rem;
+    }
+
+    &-headline {
+      font-size: 1.125rem;
+      color: #06a4c6;
+      margin-bottom: 9px;
+      &:before {
+        content: "▶";
+        font-size: 0.75rem;
+        font-weight: normal;
+        color: #06a4c6;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+
+    &-txt{
+      margin-bottom: 20px;
+    }
+
+    &.rule1 {
+      &:after {
+        width: 130px;
+        height: 130px;
+        background-position: 0 0;
+      }
+    }
+
+    &.rule2 {
+      &:after {
+        width: 130px;
+        height: 130px;
+        background-position: -137px 0;
+      }
+    }
+
+    &.rule3 {
+      &:after {
+        width: 130px;
+        height: 130px;
+        background-position: -275px 0;
+      }
+    }
+  }
+
+}
 
 
 

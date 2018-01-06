@@ -1,0 +1,423 @@
+.top-contents{
+  height:955px;
+}
+
+.contents.top-contents#top-contents{
+  margin-bottom:0;
+}
+
+.main-visual{
+  &-wrap{
+    width:1359px;
+    height:1067px;
+
+    padding-top:165px;
+    margin:0 auto;
+    background:url(/static/sm/images/bg_top_contents.png) no-repeat center 229px;
+    position:relative;
+    z-index:2;
+  }
+
+  &-title{
+    position:absolute;
+    top:335px;
+    left:235px;
+  }
+}
+
+.main-news{
+  height:60px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:25px 0 0 -288px;
+
+  &-title{
+    width:186px;
+    height:60px;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    background:#373737;
+    transform:skew(-47deg);
+
+    color:#fff;
+    font-size:1.125rem;
+    font-weight:400;
+    text-align:center;
+    line-height:60px;
+
+    z-index:12;
+
+    cursor:pointer;
+
+    &.on{
+      background:#fb6c31;
+    }
+
+    &.match{
+      left:186px;
+    }
+
+    .skew{
+      display:block;
+      width:100%;
+      height:60px;
+      transform:skew(47deg);
+    }
+  }
+
+  &-text{
+    display:none;
+
+    width:594px;
+    height:60px;
+
+    padding:0 70px;
+    position:absolute;
+    top:0;
+    left:342px;
+
+    background:#000;
+    font-size:1rem;
+    font-weight:400;
+    //line-height:60px;
+    z-index:10;
+    transform:skew(-47deg);
+
+    &.on{
+      display:block;
+    }
+  }
+
+  &-notice{
+    height:26px;
+    position:relative;
+    top:17px;
+    overflow:hidden;
+    transform:skew(47deg);
+
+    &-item{
+      height:26px;
+      line-height:26px;
+      position:absolute;
+      top:0;
+      left:0;
+      width: 80%;
+    }
+
+    &-link{
+      display:block;
+      width:100%;
+      padding-right:30px;
+      position:relative;
+      color:#fff;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+
+      &.new{
+        &:after{
+          content:"N";
+          display:block;
+          width:20px;
+          height:20px;
+          text-align:center;
+          line-height:20px;
+          border-radius:10px;
+          background:#00aec3;
+          position:absolute;
+          top:2px;
+          right:0;
+          font-size:0.875rem;
+        }
+      }
+    }
+
+    &-wrap{
+      position:absolute;
+      right:70px;
+      transform:skew(47deg);
+      @extend %clearfix;
+    }
+
+    &-btn{
+      display:block;
+      width:10px;
+      height:11px;
+      padding:0;
+      margin-right:15px;
+      border:0;
+      background:url(/static/sm/images/spr_main_news_btn.png) no-repeat;
+
+      float:left;
+
+      text-indent:-99999em;
+
+      &.prev{
+        background-position:0 0;
+      }
+
+      &.next{
+        background-position:-50px 0;
+        margin-right:0;
+      }
+
+      &.pause{
+        background-position:-24px 0;
+      }
+
+      &.play{
+        background-position:-76px 0;
+      }
+    }
+
+  }
+
+}
+
+.main-member{
+  display:block;
+  width:300px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:140px 0 0 -340px;
+
+  &-list{
+    width:230px;
+    height:230px;
+
+    margin:0 auto;
+    border-radius:50%;
+    background:#f2f2f2;
+    position:relative;
+
+    overflow:hidden;
+
+    &-item{
+
+      width:230px;
+      height:230px;
+      position:absolute;
+      top:0;
+      left:0;
+
+    }
+
+    &-link{
+      display:block;
+      width:100%;
+      height:100%;
+      padding-top:170px;
+
+      position:absolute;
+
+      color:#fff;
+      font-size:1.125rem;
+      text-align:center;
+      line-height:60px;
+
+      span{
+        display:block;
+        position:relative;
+        z-index:12;
+      }
+
+      &:after{
+        content:"";
+        display:block;
+        width:100%;
+        height:60px;
+        line-height:60px;
+        background:rgba(0,0,0,0.5);
+        position:absolute;
+        bottom:0;
+        left:0;
+        z-index:10;
+      }
+
+      &:before{
+        content:"";
+        display:block;
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+
+      &.member1:before{background:url(/static/sm/images/img_main_member_01.png) no-repeat;}
+      &.member2:before{background:url(/static/sm/images/img_main_member_02.png) no-repeat;}
+      &.member3:before{background:url(/static/sm/images/img_main_member_03.png) no-repeat;}
+      &.member4:before{background:url(/static/sm/images/img_main_member_04.png) no-repeat;}
+      &.member5:before{background:url(/static/sm/images/img_main_member_05.png) no-repeat;}
+      &.member6:before{background:url(/static/sm/images/img_main_member_06.png) no-repeat;}
+      &.member7:before{background:url(/static/sm/images/img_main_member_07.png) no-repeat;}
+      &.member8:before{background:url(/static/sm/images/img_main_member_08.png) no-repeat;}
+      &.member9:before{background:url(/static/sm/images/img_main_member_09.png) no-repeat;}
+      &.member10:before{background:url(/static/sm/images/img_main_member_10.png) no-repeat;}
+      &.member11:before{background:url(/static/sm/images/img_main_member_11.png) no-repeat;}
+      &.member12:before{background:url(/static/sm/images/img_main_member_12.png) no-repeat;}
+      &.member13:before{background:url(/static/sm/images/img_main_member_13.png) no-repeat;}
+      &.member14:before{background:url(/static/sm/images/img_main_member_14.png) no-repeat;}
+      &.member15:before{background:url(/static/sm/images/img_main_member_15.png) no-repeat;}
+      &.member16:before{background:url(/static/sm/images/img_main_member_16.png) no-repeat;}
+
+    }
+  }
+
+  &-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    &.prev{
+      display:block;
+      width:15px;
+      height:24px;
+      padding:0;
+      border:none;
+      background:url(/static/sm/images/spr_main_member_btn.png) no-repeat;
+      left:0;
+      text-indent:-99999em;
+    }
+
+    &.next{
+      display:block;
+      width:15px;
+      height:24px;
+      padding:0;
+      border:none;
+      background:url(/static/sm/images/spr_main_member_btn.png) no-repeat -301px 0;
+      right:0;
+
+      text-indent:-99999em;
+    }
+  }
+
+}
+
+.main-link{
+  display:block;
+  width:311px;
+  height:73px;
+  background:url(/static/sm/images/bg_main_intro_link.png) no-repeat 0px 0px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:210px 0 0 75px;
+  text-indent:-99999em;
+}
+
+.main-top{
+
+  &-bg-wrap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+  }
+
+  &-bg{
+    &.bg1{
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      background:url(/static/sm/images/bg_main_visual_01.jpg) no-repeat;
+    }
+
+    &.bg2{
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      background:url(/static/sm/images/bg_main_visual_02.jpg) no-repeat;
+    }
+
+    &.bg3{
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      background:url(/static/sm/images/bg_main_visual_03.jpg) no-repeat;
+    }
+
+  }
+
+
+}
+
+.banner-link{
+  width:100%;
+  height:396px;
+  background:url(/static/sm/images/bg_main_banner.png) no-repeat center top;
+  position:relative;
+  z-index:1;
+
+  .menu-list{
+    width:1152px;
+    padding-top:130px;
+    margin:0 auto;
+    @extend %clearfix;
+
+    &-item{
+      float:left;
+      margin:0 56px;
+    }
+
+    &-link{
+      display:block;
+
+      width:117px;
+      height:170px;
+      padding-top:142px;
+
+      position:relative;
+
+      text-align:center;
+
+      &:before{
+        content:"";
+        display:block;
+        width:117px;
+        height:117px;
+        background:url(/static/sm/images/spr_main_banner_link.png) no-repeat;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+
+      &.link1:before{
+        background-position:0px 0;
+      }
+
+      &.link2:before{
+        background-position:-240px 0;
+      }
+
+      &.link3:before{
+        background-position:-480px 0;
+      }
+
+      &.link4:before{
+        background-position:-720px 0;
+      }
+
+      &.link5:before{
+        background-position:-960px 0;
+      }
+
+    }
+
+  }
+
+}

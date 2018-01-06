@@ -156,13 +156,13 @@ gulp.task('release:copy:jsLib', function() {
 
 // release images
 gulp.task('release:images', function(){
-  return gulp.src('../static/co/images/*.*')
+  return gulp.src('../static/sm/images/*.*')
       .pipe(gulp.dest('../release/static/sm/images/'));
 });
 
 // release fonts
 gulp.task('release:fonts', function(){
-  return gulp.src('../static/co/fonts/**')
+  return gulp.src('../static/sm/fonts/**')
       .pipe(gulp.dest('../release/static/sm/fonts/'));
 });
 
