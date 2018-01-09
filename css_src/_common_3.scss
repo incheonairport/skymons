@@ -185,6 +185,7 @@
           background-position-y: -8px;
         }
       }
+
       &.coach{
         &:after{
           background: url(/static/sm/images/img_spr_staff.png) no-repeat;
@@ -192,23 +193,23 @@
         &.staff01{
 
           &:after{
-            background-position: -342px 0;
-            width: 135px;
+            background-position: -25px -182px;
+            width: 130px;
             height: 160px;
           }
 
           &.on:after{
-            background-position: -9px 0;
+            background-position: -25px -8px;
           }
         }
         &.staff02{
           &:after{
-            background-position: -514px 0;
-            width: 135px;
+            background-position: -194px -182px;
+            width: 130px;
             height: 160px;
           }
           &.on:after{
-            background-position: -181px 0;
+            background-position: -194px -8px;
           }
         }
       }
