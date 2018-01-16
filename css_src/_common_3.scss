@@ -303,3 +303,80 @@
 a, button{
   cursor: pointer;
 }
+
+.f-right{
+  float:right !important;
+}
+
+.find-info{
+  &-list{
+    margin: 10px 0;
+    @extend %clearfix;
+  }
+
+  &-item{
+    float:left;
+    position: relative;
+    &:first-child{
+      padding-right: 10px;
+      &:after{
+        content: '';
+        display: block;
+        width: 1px;
+        height: 15px;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        background: #666;
+      }
+    }
+  }
+
+  &-link{
+    font-size: 1rem;
+    color:#444;
+
+    //&.id{
+    //  margin-right: 5px;
+    //}
+
+    &.pw{
+      padding-left: 10px;
+    }
+  }
+}
+
+.sign-in{
+  padding-bottom: 20px;
+
+  &-title{
+    font-size: 1.125rem;
+    color: #444;
+  }
+
+  &-txt{
+    font-size: 1rem;
+    color: #444;
+  }
+
+  &-btn{
+    width: 99px;
+    height: 40px;
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #a6a7ab;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  &-col1{
+    float: left;
+  }
+
+  &-col2{
+    float: left;
+
+  }
+}
