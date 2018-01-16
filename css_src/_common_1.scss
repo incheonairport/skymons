@@ -1866,13 +1866,43 @@
 .dhx_cal_container{
   display: block;
   margin: 0 auto;
+  height: 700px !important;
 }
-.dhx_cal_headerb{
+.dhx_cal_header{
+  height: 40px !important;
   border: 1px solid #CECECE !important;
+  background: #fff;
 }
 .dhx_scale_bar{
+  height: 40px !important;
   border-left: 1px solid #CECECE;
+  line-height: 40px !important;
+  background: #fff;
+  &:nth-child(2){
+    left: 115px !important;
+  }
+  &:nth-child(4){
+    left: 341px !important;
+  }
+  &:nth-child(5){
+    left: 454px !important;
+  }
+  &:nth-child(6){
+    left: 567px !important;
+  }
+  &:nth-child(7){
+    left: 681px !important;
+  }
+}
+.dhx_cal_data{
+  top: 101px !important;
+  height: 700px !important;
 }
 .dhx_cal_data table{
   border-left: 1px solid #CECECE;
+  margin-left: 2px;
+}
+
+.dhx_month_body{
+  height: 90px !important;
 }
