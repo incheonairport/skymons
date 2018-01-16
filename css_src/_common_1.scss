@@ -382,7 +382,7 @@
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  overflow-y:scroll;
+  overflow-y:auto;
   z-index:10;
 
   &.on{
@@ -429,6 +429,16 @@
     font-family: 'nanumsq', sans-serif;
     color: #06a4c7;
 
+    &.login{
+      font-size: 2.75rem;
+      margin-top: 40px;
+      text-align: center;
+      font-family:nanumsq, sans-serif;
+      color: #222;
+      padding:0;
+      border:none;
+    }
+
     &-sub{
       margin-bottom: 30px;
       color: #06a4c7;
@@ -455,6 +465,7 @@
       font-weight: 900;
     }
     p{
+      font-size: 1rem;
       line-height: 1.5;
       color: #222;
     }
@@ -462,6 +473,30 @@
       height: 50px;
       font-size: 1.5rem;
     }
+  }
+
+  &-sub{
+    font-size:1.125rem;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  &.login-area{
+    width:600px;
+  }
+
+  &-btn{
+
+    &-login{
+      width:190px;
+      height: 110px;
+      //margin-left: 81px;
+      background: #06a4c7;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
   }
 }
 
@@ -663,6 +698,14 @@
   }
   &.gutter{
     @extend %gutter;
+  }
+
+  &.log-in{
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 20px;
+    .inner-col{
+      width:auto !important;
+    }
   }
 }
 
@@ -1806,6 +1849,63 @@
   margin-left: 2px;
 }
 
-.dhx_month_body{
+.dhx_month_body {
   height: 90px !important;
+}
+
+/*capcha*/
+.capcha{
+  width:150px;
+  height:50px;
+  border:1px solid #d9d9d9;
+  font-size:1rem!important;
+  position:relative;
+  text-indent:24px;
+  background:#fff;
+  &:before{
+    content:'';
+    display:block;
+    background: url(/static/ap/images/spr_service_ico.png) no-repeat;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:24px;
+    margin:auto;
+  }
+  &.reflash{
+    &:before{
+      background-position:-29px -18px;
+      width: 21px;
+      height: 21px;
+    }
+
+  }
+  &.sound{
+    &:before{
+      background-position: -68px -17px;
+      width: 25px;
+      height: 23px;
+    }
+  }
+}
+.input-align{
+  clear: both;
+  overflow:hidden;
+
+  .capcha{
+    float:left;
+    &:nth-child(3){
+      border-left:0;
+    }
+  }
+  img{
+    float:left;
+  }
+  .user-input-text{
+    width:550px!important;
+  }
+  .capcha+.user-input-text{
+    border-top:0!important;
+  }
+
 }
