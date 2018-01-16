@@ -228,7 +228,7 @@
     }
     &-select, &-txt{
       height:40px;
-      padding: 0 10px;
+      padding: 0 0 0 10px;
       border: 1px solid #818181;
       border-right:0;
       font-size:0.9375rem;
@@ -1733,6 +1733,7 @@
   margin-top:30px;
 }
 
+
 // margin-top:35px;
 .mt35, %mt35{
   margin-top:35px;
@@ -1761,4 +1762,20 @@
 // margin-top:60px;
 .mt60, %mt60{
   margin-top:60px;
+}
+
+
+/*달력*/
+.dhx_cal_container{
+  display: block;
+  margin: 0 auto;
+}
+.dhx_cal_headerb{
+  border: 1px solid #CECECE !important;
+}
+.dhx_scale_bar{
+  border-left: 1px solid #CECECE;
+}
+.dhx_cal_data table{
+  border-left: 1px solid #CECECE;
 }
