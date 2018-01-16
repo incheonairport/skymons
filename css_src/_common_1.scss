@@ -1807,6 +1807,7 @@
   margin-top:60px;
 }
 
+<<<<<<< HEAD
 
 /*달력*/
 .dhx_cal_container{
@@ -1854,6 +1855,7 @@
 }
 
 /*capcha*/
+
 .capcha{
   width:150px;
   height:50px;
@@ -1888,24 +1890,23 @@
     }
   }
 }
-.input-align{
+.input-align {
   clear: both;
-  overflow:hidden;
+  overflow: hidden;
 
-  .capcha{
-    float:left;
-    &:nth-child(3){
-      border-left:0;
+  .capcha {
+    float: left;
+    &:nth-child(3) {
+      border-left: 0;
     }
   }
-  img{
-    float:left;
+  img {
+    float: left;
   }
-  .user-input-text{
-    width:550px!important;
+  .user-input-text {
+    width: 550px !important;
   }
-  .capcha+.user-input-text{
-    border-top:0!important;
+  .capcha + .user-input-text {
+    border-top: 0 !important;
   }
-
 }
