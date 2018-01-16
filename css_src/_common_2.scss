@@ -518,6 +518,11 @@ strong {
   border: 1px solid #d9d9d9;
   box-sizing: border-box;
 
+  &.login{
+    width: 345px;
+    height: 50px;
+  }
+
   &.wide {
     width: 100%;
   }
