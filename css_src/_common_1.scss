@@ -228,7 +228,7 @@
     }
     &-select, &-txt{
       height:40px;
-      padding: 0 10px;
+      padding: 0 0 0 10px;
       border: 1px solid #818181;
       border-right:0;
       font-size:0.9375rem;
@@ -1776,6 +1776,7 @@
   margin-top:30px;
 }
 
+
 // margin-top:35px;
 .mt35, %mt35{
   margin-top:35px;
@@ -1840,23 +1841,38 @@
     }
   }
 }
-.input-align{
+.input-align {
   clear: both;
-  overflow:hidden;
+  overflow: hidden;
 
-  .capcha{
-    float:left;
-    &:nth-child(3){
-      border-left:0;
+  .capcha {
+    float: left;
+    &:nth-child(3) {
+      border-left: 0;
     }
   }
-  img{
-    float:left;
+  img {
+    float: left;
   }
-  .user-input-text{
-    width:550px!important;
+  .user-input-text {
+    width: 550px !important;
   }
-  .capcha+.user-input-text{
-    border-top:0!important;
+  .capcha + .user-input-text {
+    border-top: 0 !important;
   }
+}
+
+/*달력*/
+.dhx_cal_container{
+  display: block;
+  margin: 0 auto;
+}
+.dhx_cal_headerb{
+  border: 1px solid #CECECE !important;
+}
+.dhx_scale_bar{
+  border-left: 1px solid #CECECE;
+}
+.dhx_cal_data table{
+  border-left: 1px solid #CECECE;
 }
