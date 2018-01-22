@@ -726,6 +726,19 @@
   }
 }
 
+.search-box-year-contents{
+  display: none;
+  .table{
+    img{
+      width: 100%;
+    }
+  }
+  &.on{
+    display: block;
+  }
+
+}
+
 .table{
   width:100%;
   font-size: 1rem;
