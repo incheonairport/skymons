@@ -142,12 +142,13 @@
   </ul>
 
 </nav>
-
 <section id="top-contents" class="contents">
-  <div class="sub-top bg1">
+  <div class="sub-top bg4">
     <div class="sub-top-inner">
       <div class="sub-top-descbox">
-        <h2 class="sub-top-descbox-text">About <span>Fc</span></h2>
+        <!--<div class="sub-top-descbox-line">-->
+        <h2 class="sub-top-descbox-text">Skymons <span>Community</span></h2>
+        <!--</div>-->
       </div>
     </div>
   </div>
@@ -155,67 +156,299 @@
 <div class="location">
   <div class="location-bar">
     <ul class="location-bar-nav">
-      <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
-      <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">구단소개</a></li>
-      <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">단장인사말</a></li>
+      <li class="location-bar-nav-item ico"><a href="/sm/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+      <li class="location-bar-nav-item ico"><a href="/sm/bbsList.do?FNCT_CODE=216" class="location-bar-nav-item-link">커뮤니티</a></li>
+      <li class="location-bar-nav-item"><a href="/sm/bbsList.do?FNCT_CODE=216" class="location-bar-nav-item-link">포토갤러리</a></li>
     </ul>
   </div>
 </div>
 <section class="contents">
   <div class="inner-section">
+
+    <!-- leftMenu start -->
+
+
     <nav class="left-menu">
-    
+
       <ul class="left-menu-depth1">
-        <li class="left-menu-depth1-item">구단소개
+        <li class="left-menu-depth1-item">커뮤니티
           <ul class="left-menu-depth2">
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link on" href="#">사장 인사말</a></li>
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link"  href="#">단장 인사말</a></li>
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link" href="#">팀연혁</a></li>
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link" href="#">CI</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link on" href="/sm/bbsList.do?FNCT_CODE=216">포토갤러리</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm/bbsList.do?FNCT_CODE=205">선수단소식</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm_cnt/commun/comnun/comnun.do">사회공헌 활동</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm/bbsList.do?FNCT_CODE=206">응원마당</a></li>
           </ul>
         </li>
       </ul>
-    
+
     </nav>
+    <!--// leftMenu end -->
 
     <div class="sub-contents">
-      <h4 class="sub-contents-heading1">단장 인사말</h4>
+
+      <h4 class="sub-contents-heading1">포토갤러리</h4>
+
+      <input type="hidden" id="FNCT_CODE" name="FNCT_CODE" value="216">
+      <input id="SERCHVAL" name="SERCHVAL" type="hidden" title="개발에 필요한 빈 인풋" value="">
+      <input id="NODE_ID" name="NODE_ID" type="hidden" title="개발에 필요한 빈 인풋" value="">
+
+      <input id="SELECT_INDEX" name="SELECT_INDEX" type="hidden" title="개발에 필요한 빈 인풋" value="">
 
       <article class="article">
-        <div class="ceo-message">
-          <div class="message-wrap right">
-            <img src="/static/sm/images/img_leader.png" class="message-img right" alt="ceo 모습">
-            <p class="message-txt-tit">
-              인천국제공항 스카이몬스를 사랑해주시는 팬 여러분의 아낌없는 응원과 성원에 진심으로 감사드립니다.
-            </p>
-            <p class="message-txt">
-              스카이몬스 단장 <strong>강판석</strong>
-            </p>
+
+        <div class="search-box">
+          <div class="search-box-input">
+            <label class="search-box-title" for="search">검색</label>
+
+            <div class="search-box-input-item">
+              <select class="search-box-input-select" title="검색옵션을 선택해 주세요" id="SEARCH_TYPE" name="SEARCH_TYPE">
+                <option value="all">전체</option>
+                <option value="subject">제목</option>
+                <option value="content">내용</option>
+              </select>
+              <input type="text" class="search-box-input-txt" id="SEARCH_STR" name="SEARCH_STR" placeholder="검색어 입력" title="검색어 입력을 통해 검색할 수 있습니다" value="">
+            </div>
+            <div class="search-box-btn-area">
+              <button type="button" class="search-box-btn ico" onclick="fncRefresh(0);return false;">검색</button>
+            </div>
           </div>
         </div>
-        <div class="message-bottom-txt">
-          <p class="mt30">
-            국민 여러분의 성원에 힘입어 창단된 스카이몬스는 <span>창단 1년만에 광주유니버시아드대회 금메달 2관왕, 세계혼합선수권
-          대회 은메달, 인천아시안게임 은메달</span> 및 다수의 국내대회에서도 우수한 성적을 거두며 성공적으로 안착하였습니다.
-          </p>
-          <p class="mt30">
-            2017년은 스카이몬스에게 새로운 도약의 해가 될 것입니다. 안재창 감독을 비롯한 코칭스태프들의 체계적인
-            훈련시스템을 통한 선수들의 기량 향상과 우수 선수들의 영입을 통해 신흥 명문 스포츠단으로서의 입지를 확고히
-            구축할 것입니다. <br/>
-            아울러 해외 명문실업팀과의 상호 전지훈련 실시 및 국제대회 참가 등을 통해 기량과 성적이 한 단계 더 상승할 것으로
-            기대합니다.
-          </p>
-          <p class="mt30">
-            또한 올해에는 배드민턴 다목적 체육관 건립공사를 착공하는 등 훈련여건 개선에도 과감한 투자를 아끼지 않을 것이며,
-            사회공헌 활동과 유소년 꿈나무 육성을 위한 재능기부 사업에도 적극적인 지원을 다할 계획입니다.
-            앞으로도 스카이몬스는 국민 여러분 모두에게 사랑받는 배드민턴단이 되기 위해 최선의 노력을 다하겠습니다.
-            스카이몬스를 변함없이 사랑해 주시고, 우리 선수들에게 뜨거운 응원을 부탁드립니다.
-          </p>
 
-          <p class="mt30">
-            감사합니다.
-          </p>
+        <p class="board-page"> 전체 :<strong>22</strong>건 (1 / 2 page)</p>
+
+        <div class="table hr board-view">
+          <div class="view-head">
+            <p class="view-head-tit float-l" id="CENTER_SJ">여름철대회를 앞두고~</p>
+            <a id="CENTER_MOVE" class="btn-type-normal btn2 ico arrow-right float-r" onclick="fncGoView('', '22566','216','','');">자세히보기</a>
+          </div>
+          <div class="photo-gallery">
+            <div class="photo-top">
+              <img id="CENTER_IMG" src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22566&amp;ATCH_SN=1" alt="포토갤러리 이미지" onerror="this.src='/static/sm/images/img_gallery_temp.png'">
+            </div>
+
+            <div class="photo-thumb">
+
+              <div class="photo-list-wrap">
+                <ul class="photo-list" id="photoList" style="width: 2472px; left: 0px;">
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link on" onclick="fncSelectPhoto('0','여름철대회를 앞두고~','216','22566','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22566&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="여름철대회를 앞두고~">
+								</span>
+								<span class="title">
+
+
+
+											여름철대회를 앞두고~
+
+
+								</span>
+                      <span class="date">2017.05.26</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('1','2017 봄철대회 결승전 현장스케치','216','22497','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22497&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="2017 봄철대회 결승전 현장스케치">
+								</span>
+								<span class="title">
+
+
+											2017 봄철대회 결승전 현장스....
+
+
+
+								</span>
+                      <span class="date">2017.04.18</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('2','[코리아오픈 - 이소희] ','216','22185','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22185&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="[코리아오픈 - 이소희] ">
+								</span>
+								<span class="title">
+
+
+
+											[코리아오픈 - 이소희]
+
+
+								</span>
+                      <span class="date">2016.10.13</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('3','[코리아오픈 - 김소영]','216','22184','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22184&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="[코리아오픈 - 김소영]">
+								</span>
+								<span class="title">
+
+
+
+											[코리아오픈 - 김소영]
+
+
+								</span>
+                      <span class="date">2016.10.13</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('4','금메달 땄어요~','216','22175','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22175&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="금메달 땄어요~">
+								</span>
+								<span class="title">
+
+
+
+											금메달 땄어요~
+
+
+								</span>
+                      <span class="date">2016.10.10</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('5','이소희 선수 리우 출국현장 ','216','22046','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22046&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="이소희 선수 리우 출국현장 ">
+								</span>
+								<span class="title">
+
+
+
+											이소희 선수 리우 출국현장
+
+
+								</span>
+                      <span class="date">2016.07.27</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('6','전지훈련 현장 ','216','22041','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22041&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="전지훈련 현장 ">
+								</span>
+								<span class="title">
+
+
+
+											전지훈련 현장
+
+
+								</span>
+                      <span class="date">2016.07.27</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('7','스카이몬스 신규 단원 입단식','216','22033','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=22033&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="스카이몬스 신규 단원 입단식">
+								</span>
+								<span class="title">
+
+
+
+											스카이몬스 신규 단원 입단식
+
+
+								</span>
+                      <span class="date">2016.07.27</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('8','스카이몬스 최근 모습 공개! :D','216','21908','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=21908&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="스카이몬스 최근 모습 공개! :D">
+								</span>
+								<span class="title">
+
+
+											스카이몬스 최근 모습 공개! :....
+
+
+
+								</span>
+                      <span class="date">2016.04.19</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('9','황정운선수','216','21314','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=21314&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="황정운선수">
+								</span>
+								<span class="title">
+
+
+
+											황정운선수
+
+
+								</span>
+                      <span class="date">2015.09.08</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('10','최호진선수','216','21313','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=21313&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="최호진선수">
+								</span>
+								<span class="title">
+
+
+
+											최호진선수
+
+
+								</span>
+                      <span class="date">2015.09.08</span>
+                    </a>
+                  </li>
+
+                  <li class="photo-list-item">
+                    <a class="photo-list-link" onclick="fncSelectPhoto('11','최현호선수','216','21312','','');">
+								<span class="thumb-wrap">
+									<img src="/co/cmm/bbs/cmmBbsDown.do?NTT_ID=21312&amp;ATCH_SN=1" onerror="this.src='/static/sm/images/img_gallery_temp.png'" class="thumb" alt="최현호선수">
+								</span>
+								<span class="title">
+
+
+
+											최현호선수
+
+
+								</span>
+                      <span class="date">2015.09.08</span>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+
+              <div class="photo-thumb-btn-wrap">
+                <button type="button" class="photo-thumb-btn prev">이전</button>
+                <button type="button" class="photo-thumb-btn next">다음</button>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
 
       </article>
 
@@ -223,170 +456,254 @@
   </div>
 </section>
 
+
 <footer class="footer">
+
 
   <div class="footer-inside inner-section">
 
+
     <div class="fnb">
+
 
       <ul class="fnb-list">
 
+
         <li class="fnb-list-item"><a href="" class="fnb-list-link">홈</a></li>
+
 
         <li class="fnb-list-item"><a href="" class="fnb-list-link">이용약관</a></li>
 
+
         <li class="fnb-list-item"><a href="" class="fnb-list-link">개인정보처리방침</a></li>
+
 
         <li class="fnb-list-item"><a href="" class="fnb-list-link">저작권보호정책</a></li>
 
+
         <li class="fnb-list-item"><a href="" class="fnb-list-link">이메일 주소 무단수집 거부</a></li>
+
 
       </ul>
 
+
     </div>
+
+
 
 
 
     <div class="footer-align right">
 
+
       <div class="sns">
+
 
         <ul class="sns-list">
 
+
           <li class="sns-list-item"><a href="http://instagram.com/incheon_airport" target="_blank" class="sns-list-link ico ig">인스타그램</a></li>
+
 
           <li class="sns-list-item"><a href="https://www.facebook.com/Incheonairport" target="_blank" class="sns-list-link ico fb">페이스북</a></li>
 
+
           <li class="sns-list-item"><a href="" target="_blank" class="sns-list-link ico tt">트위터</a></li>
+
 
           <li class="sns-list-item"><a href="https://www.youtube.com/IncheonAirport1" target="_blank" class="sns-list-link ico yb">유투브</a></li>
 
+
         </ul>
 
+
       </div>
+
+
 
 
 
       <div class="incheon-select">
 
+
         <div class="select-link relsite">
+
 
           <button type="button" name="button" title="클릭하면 관련사이트 목록이 나타납니다." class="select-link-default">
 
+
             <span class="select-link-tit">관련사이트</span>
 
+
             <span class="ico arrow_down" >목록보기</span>
+
 
           </button>
 
 
 
+
+
           <ul class="select-list up">
+
 
             <li class="select-list-item"><a href="http://ebid.airport.kr/" target="_blank" class="select-list-link">전자입찰시스템</a></li>
 
+
             <li class="select-list-item"><a href="http://ebpp.airport.kr/" target="_blank" class="select-list-link">인터넷청구시스템</a></li>
+
 
             <li class="select-list-item"><a href="http://iiac.guideline.co.kr/" target="_blank" class="select-list-link">자금입찰시스템</a></li>
 
+
             <li class="select-list-item"><a href="http://obstacle.airport.kr/" target="_blank" class="select-list-link">장애물관리안내</a></li>
+
 
             <li class="select-list-item"><a href="http://aircis.kr/" target="_blank" class="select-list-link">항공물류정보시스템</a></li>
 
+
             <li class="select-list-item"><a href="http://academy.airport.kr/kasa/index.jsp" target="_blank" class="select-list-link">항공보안교육원</a></li>
+
 
             <li class="select-list-item"><a href="http://academy.airport.kr/academy" target="_blank" class="select-list-link">Aviation Academy</a></li>
 
+
             <li class="select-list-item"><a href="http://airinfo.airport.kr/airinfo/index.jsp" target="_blank" class="select-list-link">운항자료서비스</a></li>
+
 
             <li class="select-list-item"><a href="http://business.airport.kr/business/index.jsp" target="_blank" class="select-list-link">적재대관리 홈페이지</a></li>
 
+
             <li class="select-list-item"><a href="http://cip.airport.kr/" target="_blank" class="select-list-link">협업포털서비스</a></li>
+
 
             <li class="select-list-item"><a href="http://academy.airport.kr/" target="_blank" class="select-list-link">인천공항 인재개발원</a></li>
 
+
             <li class="select-list-item"><a href="http://www.airport.kr/bd/login.do" target="_blank" class="select-list-link">인천공항 이사회</a></li>
+
 
             <li class="select-list-item"><a href="http://phonebook.airport.kr/" target="_blank" class="select-list-link">인천공항 전자전화번호부</a></li>
 
+
             <li class="select-list-item"><a href="http://www.iae.co.kr/" target="_blank" class="select-list-link">인천공항에너지(주)</a></li>
 
+
             <li class="select-list-item"><a href="http://www.airport.kr/iia3rd/index.jsp" target="_blank" class="select-list-link">3단계건설사업</a></li>
+
 
             <li class="select-list-item"><a href="https://tsp.airport.kr:844/" target="_blank" class="select-list-link">입주자서비스포탈</a></li>
 
 
 
+
+
             <li class="select-list-item"><a href="http://www.molit.go.kr/" target="_blank" class="select-list-link">국토교통부 홈페이지</a></li>
+
 
             <li class="select-list-item"><a href="http://ia.icpolice.go.kr/main.asp" target="_blank" class="select-list-link">인천공항 경찰대</a></li>
 
+
             <li class="select-list-item"><a href="http://www.0404.go.kr/" target="_blank" class="select-list-link">외교부 안전여행</a></li>
+
 
             <li class="select-list-item"><a href="http://www.bbbkorea.org/" target="_blank" class="select-list-link">언어가 안통할때</a></li>
 
+
             <li class="select-list-item"><a href="http://www.juso.go.kr" target="_blank" class="select-list-link">도로명주소안내</a></li>
+
 
             <li class="select-list-item"><a href="http://travelinfo.cdc.go.kr/" target="_blank" class="select-list-link">해외여행질병정보센터</a></li>
 
+
             <li class="select-list-item"><a href="http://wiseuser.go.kr/jsp/commList.do?bcode=520&amp;hcode=500&amp;vcode=2019" target="_blank" class="select-list-link">해외로밍 캠페인</a></li>
+
 
             <li class="select-list-item"><a href="http://www.airport.co.kr/" target="_blank" class="select-list-link">한국공항공사</a></li>
 
+
             <li class="select-list-item"><a href="http://www.safe182.go.kr/index.do" target="_blank" class="select-list-link">안전Dream</a></li>
 
+
             <li class="select-list-item"><a href="http://www.customs.go.kr/kcshome/site/index.do?layoutSiteId=airport" target="_blank" class="select-list-link">인천공항세관</a></li>
+
 
             <li class="select-list-item"><a href="http://www.immigration.go.kr" target="_blank" class="select-list-link">출입국외국인정책본부</a></li>
 
 
 
+
+
           </ul>
 
+
         </div>
+
 
       </div>
 
 
 
+
+
     </div>
+
+
 
 
 
     <div class="footer-align left">
 
+
       <p class="footer-call">인천국제공항 고객센터 <span class="footer-call-num">1577-2600</span></p>
+
+
 
 
 
       <ul class="footer-contact">
 
+
         <li class="footer-contact-item">인천국제공항 터미널 : 22382 인천시 중구 공항로 272</li>
 
+
         <li class="footer-contact-item">인천국제공항공사 : 22382 인천시 중구 공항로 424번길 47</li>
+
 
       </ul>
 
 
 
+
+
       <address class="footer-copyright">Copyright Incheon International Airport Corporation. All rights reserved.</address>
+
 
     </div>
 
+
   </div>
+
 
 </footer>
 
 
 
+
+
 <!--<div class="loading">-->
 
+
   <!--<div class="loading-inner opacity">로딩중</div>-->
+
 
 <!--</div>-->
 
 
 
+
+
 </body>
+
 
 </html>

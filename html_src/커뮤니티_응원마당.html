@@ -1,0 +1,165 @@
+<!--=include _include/_header.html -->
+
+<section id="top-contents" class="contents">
+  <div class="sub-top bg4">
+    <div class="sub-top-inner">
+      <div class="sub-top-descbox">
+        <!--<div class="sub-top-descbox-line">-->
+        <h2 class="sub-top-descbox-text">Skymons <span>Community</span></h2>
+        <!--</div>-->
+      </div>
+    </div>
+  </div>
+</section>
+<div class="location">
+  <div class="location-bar">
+    <ul class="location-bar-nav">
+      <li class="location-bar-nav-item ico"><a href="/sm/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+      <li class="location-bar-nav-item ico"><a href="/sm/bbsList.do?FNCT_CODE=216" class="location-bar-nav-item-link">커뮤니티</a></li>
+      <li class="location-bar-nav-item"><a href="/sm/bbsList.do?FNCT_CODE=206" class="location-bar-nav-item-link">응원마당</a></li>
+    </ul>
+  </div>
+</div>
+<section class="contents">
+  <div class="inner-section">
+
+    <!-- leftMenu start -->
+
+
+    <nav class="left-menu">
+
+      <ul class="left-menu-depth1">
+        <li class="left-menu-depth1-item">커뮤니티
+          <ul class="left-menu-depth2">
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm/bbsList.do?FNCT_CODE=216">포토갤러리</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm/bbsList.do?FNCT_CODE=205">선수단소식</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm_cnt/commun/comnun/comnun.do">사회공헌 활동</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link on" href="/sm/bbsList.do?FNCT_CODE=206">응원마당</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </nav>
+    <!--// leftMenu end -->
+
+    <div class="sub-contents">
+      <input type="hidden" id="FNCT_CODE" name="FNCT_CODE" value="206">
+      <input id="PAGEINDEX" name="PAGEINDEX" type="hidden" title="개발에 필요한 빈 인풋" value="1">
+      <input id="SERCHVAL" name="SERCHVAL" type="hidden" title="개발에 필요한 빈 인풋" value="">
+      <input id="NODE_ID" name="NODE_ID" type="hidden" title="개발에 필요한 빈 인풋" value="">
+      <h4 class="sub-contents-heading1">응원마당</h4>
+
+      <article class="article">
+
+        <div class="search-box">
+          <div class="search-box-input">
+            <label class="search-box-title" for="SEARCH_TYPE">검색</label>
+
+            <div class="search-box-input-item">
+              <select class="search-box-input-select" id="SEARCH_TYPE" title="검색옵션을 선택해 주세요">
+                <option value="all">전체</option>
+                <option value="subject">제목</option>
+                <option value="content">내용</option>
+              </select>
+              <input type="text" id="SEARCH_STR" value="" class="search-box-input-txt" placeholder="검색어 입력" title="검색어 입력을 통해 검색할 수 있습니다">
+            </div>
+            <div class="search-box-btn-area">
+              <button type="button" onclick="fncGoSearch()" class="search-box-btn ico">검색</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="board-page"> 전체 :<strong>3</strong>건 (1 / 1 page)</p>
+        <table class="table vt board-list" summary="선수단 소식 게시판입니다.">
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:50%">
+            <col style="width:10%">
+            <col style="width:15%">
+            <col style="width:15%">
+          </colgroup>
+          <thead>
+          <tr>
+            <th scope="col"><strong>번호</strong></th>
+            <th scope="col"><strong>제목</strong></th>
+            <th scope="col"><strong>첨부파일</strong></th>
+            <th scope="col"><strong>작성일</strong></th>
+            <th scope="col"><strong>조회수</strong></th>
+
+          </tr>
+          </thead>
+          <tbody>
+
+
+          <tr>
+            <td class="center">3</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22633', '206', '', '', '1');">
+                인천 청람초등학교 배드민턴부를 응원해주세요.
+              </a>
+            </td>
+            <td class="center"><span class="file-list-link crud-ico ">첨부파일</span></td>
+            <td class="center">2017.07.27</td>
+            <td class="center">31</td>
+          </tr>
+
+
+          <tr>
+            <td class="center">2</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22204', '206', '', '', '1');">
+                스카이몬스 전국체전 최고성적 달성기념 특별이벤트 시행!!
+              </a>
+            </td>
+            <td class="center"><span class="file-list-link crud-ico ">첨부파일</span></td>
+            <td class="center">2016.11.03</td>
+            <td class="center">67</td>
+          </tr>
+
+
+          <tr>
+            <td class="center">1</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22062', '206', '', '', '1');">
+
+
+                이소희 선수의 올림픽 선전을 응원해주세요♡
+
+
+              </a>
+            </td>
+            <td class="center"><span class="file-list-link crud-ico ">첨부파일</span></td>
+            <td class="center">2016.08.04</td>
+            <td class="center">58</td>
+          </tr>
+
+
+          </tbody>
+        </table>
+
+        <!-- 페이지네이션 -->
+        <div class="mt40">
+          <div class="multi-col double">
+            <div class="inner-col wide">
+              <div class="pagenation">
+                <ol class="pagenation-list">
+                  <li class="pagenation-list-item on"><a class="pagenation-list-link" href="#">1</a></li>
+                </ol>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-list-btn">
+          <a class="btn-type-normal ico arrow-point-right" href="/sm/cheerYardListWrite.do">등록하기</a>
+        </div>
+
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!--=include _include/_footer.html -->

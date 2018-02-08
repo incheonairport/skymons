@@ -142,12 +142,13 @@
   </ul>
 
 </nav>
-
 <section id="top-contents" class="contents">
-  <div class="sub-top bg1">
+  <div class="sub-top bg4">
     <div class="sub-top-inner">
       <div class="sub-top-descbox">
-        <h2 class="sub-top-descbox-text">About <span>Fc</span></h2>
+        <!--<div class="sub-top-descbox-line">-->
+        <h2 class="sub-top-descbox-text">Skymons <span>Community</span></h2>
+        <!--</div>-->
       </div>
     </div>
   </div>
@@ -155,66 +156,283 @@
 <div class="location">
   <div class="location-bar">
     <ul class="location-bar-nav">
-      <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link home ico">home</a></li>
-      <li class="location-bar-nav-item ico"><a href="#" class="location-bar-nav-item-link">구단소개</a></li>
-      <li class="location-bar-nav-item"><a href="#" class="location-bar-nav-item-link">단장인사말</a></li>
+      <li class="location-bar-nav-item ico"><a href="/sm/index.do" class="location-bar-nav-item-link home ico">home</a></li>
+      <li class="location-bar-nav-item ico"><a href="/sm/bbsList.do?FNCT_CODE=216" class="location-bar-nav-item-link">커뮤니티</a></li>
+      <li class="location-bar-nav-item"><a href="/sm/bbsList.do?FNCT_CODE=205" class="location-bar-nav-item-link">선수단소식</a></li>
     </ul>
   </div>
 </div>
 <section class="contents">
   <div class="inner-section">
+
+    <!-- leftMenu start -->
+
+
     <nav class="left-menu">
-    
+
       <ul class="left-menu-depth1">
-        <li class="left-menu-depth1-item">구단소개
+        <li class="left-menu-depth1-item">커뮤니티
           <ul class="left-menu-depth2">
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link on" href="#">사장 인사말</a></li>
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link"  href="#">단장 인사말</a></li>
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link" href="#">팀연혁</a></li>
-            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link" href="#">CI</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm/bbsList.do?FNCT_CODE=216">포토갤러리</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link on" href="/sm/bbsList.do?FNCT_CODE=205">선수단소식</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm_cnt/commun/comnun/comnun.do">사회공헌 활동</a></li>
+            <li class="left-menu-depth2-item"><a class="left-menu-depth2-item-link " href="/sm/bbsList.do?FNCT_CODE=206">응원마당</a></li>
           </ul>
         </li>
       </ul>
-    
+
     </nav>
+    <!--// leftMenu end -->
+
+    <input type="hidden" id="FNCT_CODE" name="FNCT_CODE" value="205">
+    <input type="hidden" id="PAGEINDEX" name="PAGEINDEX" value="1">
+    <input type="hidden" id="SERCHVAL" name="SERCHVAL" value="">
 
     <div class="sub-contents">
-      <h4 class="sub-contents-heading1">단장 인사말</h4>
+
+      <h4 class="sub-contents-heading1">선수단소식</h4>
 
       <article class="article">
-        <div class="ceo-message">
-          <div class="message-wrap right">
-            <img src="/static/sm/images/img_leader.png" class="message-img right" alt="ceo 모습">
-            <p class="message-txt-tit">
-              인천국제공항 스카이몬스를 사랑해주시는 팬 여러분의 아낌없는 응원과 성원에 진심으로 감사드립니다.
-            </p>
-            <p class="message-txt">
-              스카이몬스 단장 <strong>강판석</strong>
-            </p>
+        <div class="search-box">
+          <div class="search-box-input">
+            <label class="search-box-title" for="search">검색</label>
+
+            <div class="search-box-input-item">
+              <select class="search-box-input-select" id="SEARCH_TYPE" title="검색옵션을 선택해 주세요">
+                <option value="all">전체</option>
+                <option value="subject">제목</option>
+                <option value="content">내용</option>
+              </select>
+              <input type="text" class="search-box-input-txt" placeholder="검색어 입력" title="검색어 입력을 통해 검색할 수 있습니다" id="SEARCH_STR" value="">
+            </div>
+            <div class="search-box-btn-area">
+              <button type="button" class="search-box-btn ico">검색</button>
+            </div>
           </div>
         </div>
-        <div class="message-bottom-txt">
-          <p class="mt30">
-            국민 여러분의 성원에 힘입어 창단된 스카이몬스는 <span>창단 1년만에 광주유니버시아드대회 금메달 2관왕, 세계혼합선수권
-          대회 은메달, 인천아시안게임 은메달</span> 및 다수의 국내대회에서도 우수한 성적을 거두며 성공적으로 안착하였습니다.
-          </p>
-          <p class="mt30">
-            2017년은 스카이몬스에게 새로운 도약의 해가 될 것입니다. 안재창 감독을 비롯한 코칭스태프들의 체계적인
-            훈련시스템을 통한 선수들의 기량 향상과 우수 선수들의 영입을 통해 신흥 명문 스포츠단으로서의 입지를 확고히
-            구축할 것입니다. <br/>
-            아울러 해외 명문실업팀과의 상호 전지훈련 실시 및 국제대회 참가 등을 통해 기량과 성적이 한 단계 더 상승할 것으로
-            기대합니다.
-          </p>
-          <p class="mt30">
-            또한 올해에는 배드민턴 다목적 체육관 건립공사를 착공하는 등 훈련여건 개선에도 과감한 투자를 아끼지 않을 것이며,
-            사회공헌 활동과 유소년 꿈나무 육성을 위한 재능기부 사업에도 적극적인 지원을 다할 계획입니다.
-            앞으로도 스카이몬스는 국민 여러분 모두에게 사랑받는 배드민턴단이 되기 위해 최선의 노력을 다하겠습니다.
-            스카이몬스를 변함없이 사랑해 주시고, 우리 선수들에게 뜨거운 응원을 부탁드립니다.
-          </p>
 
-          <p class="mt30">
-            감사합니다.
-          </p>
+        <p class="board-page"> 전체 :<strong>47</strong>건 (1 / 5 page)</p>
+        <table class="table vt board-list" summary="선수단 소식 게시판입니다.">
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:50%">
+            <col style="width:10%">
+            <col style="width:15%">
+            <col style="width:15%">
+          </colgroup>
+          <thead>
+          <tr>
+            <th scope="col"><strong>번호</strong></th>
+            <th scope="col"><strong>제목</strong></th>
+            <th scope="col"><strong>첨부파일</strong></th>
+            <th scope="col"><strong>작성일</strong></th>
+            <th scope="col"><strong>조회수</strong></th>
+
+          </tr>
+          </thead>
+          <tbody>
+
+
+          <tr>
+            <td class="center">47</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22859', '205', '', '', '1');">
+
+
+                "인천공항공사 배드민턴단" 트레이너(주무) 및 물리치료....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico file-hwp">첨부파일</span>
+            </td>
+            <td class="center">2017.12.27</td>
+            <td class="center">142</td>
+          </tr>
+
+          <tr>
+            <td class="center">46</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22830', '205', '', '', '1');">
+
+
+                "인천공항공사 배드민턴단" 트레이너(주무) 및 물리치료....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico file-hwp">첨부파일</span>
+            </td>
+            <td class="center">2017.12.07</td>
+            <td class="center">101</td>
+          </tr>
+
+          <tr>
+            <td class="center">45</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22557', '205', '', '', '1');">
+
+
+                [뉴시스] (사진) 인천공항공사 배드민턴 코리아리그 후....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2017.05.17</td>
+            <td class="center">146</td>
+          </tr>
+
+          <tr>
+            <td class="center">44</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22556', '205', '', '', '1');">
+
+
+                [연합뉴스] (인터뷰) 배드민턴 여인천하? 이소희 '서....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2017.05.17</td>
+            <td class="center">75</td>
+          </tr>
+
+          <tr>
+            <td class="center">43</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22555', '205', '', '', '1');">
+
+
+                [연합뉴스] 배드민턴 유해원-김혜린, 아시아선수권 깜짝....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2017.05.17</td>
+            <td class="center">38</td>
+          </tr>
+
+          <tr>
+            <td class="center">42</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22500', '205', '', '', '1');">
+
+
+                [연합뉴스] 전영오픈 우승 장예나-이소희, 3월 MBN....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2017.04.18</td>
+            <td class="center">40</td>
+          </tr>
+
+          <tr>
+            <td class="center">41</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22499', '205', '', '', '1');">
+
+
+                [뉴시스] 인천공항공사, 다목적 체육관 건립 첫 삽
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2017.04.18</td>
+            <td class="center">47</td>
+          </tr>
+
+          <tr>
+            <td class="center">40</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22498', '205', '', '', '1');">
+
+
+                [연합뉴스] 배드민턴 여자복식 장예나-이소희, 전영오픈....
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2017.04.18</td>
+            <td class="center">12</td>
+          </tr>
+
+          <tr>
+            <td class="center">39</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22386', '205', '', '', '1');">
+
+
+                인천공항공사 배드민턴단 코치 및 물리치료사 모집공고
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico file-hwp">첨부파일</span>
+            </td>
+            <td class="center">2017.03.03</td>
+            <td class="center">124</td>
+          </tr>
+
+          <tr>
+            <td class="center">38</td>
+            <td>
+              <a class="board-list-link" href="#" onclick="fncGoView('22183', '205', '', '', '1');">
+
+
+                [뉴시스] 김소영-이소희 전국체전 여자복식 우승
+
+
+              </a>
+            </td>
+            <td class="center">
+              <span class="file-list-link crud-ico ">첨부파일</span>
+            </td>
+            <td class="center">2016.10.12</td>
+            <td class="center">96</td>
+          </tr>
+
+
+          </tbody>
+        </table>
+
+        <!-- 페이지네이션 -->
+        <div class="mt40">
+          <div class="multi-col double">
+            <div class="inner-col wide">
+              <div class="pagenation">
+                <ol class="pagenation-list">
+                  <li class="pagenation-list-item on"><a class="pagenation-list-link" href="#">1</a></li>
+                  <li class="pagenation-list-item "><a class="pagenation-list-link" href="#" onclick="fncPageLoad(2); return false;">2</a></li>
+                  <li class="pagenation-list-item "><a class="pagenation-list-link" href="#" onclick="fncPageLoad(3); return false;">3</a></li>
+                  <li class="pagenation-list-item "><a class="pagenation-list-link" href="#" onclick="fncPageLoad(4); return false;">4</a></li>
+                  <li class="pagenation-list-item "><a class="pagenation-list-link" href="#" onclick="fncPageLoad(5); return false;">5</a></li>
+                </ol>
+
+              </div>
+            </div>
+          </div>
         </div>
 
       </article>
