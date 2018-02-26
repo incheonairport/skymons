@@ -1,5 +1,6 @@
 .top-contents{
   height:955px;
+  min-width: 1359px;
 }
 
 .contents.top-contents#top-contents{
@@ -331,6 +332,7 @@
       top:0;
       left:0;
       background:url(/static/sm/images/bg_main_visual_01.jpg) no-repeat;
+      background-size: cover;
     }
 
     &.bg2{
@@ -340,6 +342,7 @@
       top:0;
       left:0;
       background:url(/static/sm/images/bg_main_visual_02.jpg) no-repeat;
+      background-size: cover;
     }
 
     &.bg3{
@@ -349,6 +352,7 @@
       top:0;
       left:0;
       background:url(/static/sm/images/bg_main_visual_03.jpg) no-repeat;
+      background-size: cover;
     }
 
   }
@@ -358,6 +362,7 @@
 
 .banner-link{
   width:100%;
+  min-width: 1359px;
   height:396px;
   background:url(/static/sm/images/bg_main_banner.png) no-repeat center top;
   position:relative;

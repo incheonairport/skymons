@@ -7,6 +7,7 @@
 
 .contents{
   position:relative;
+  min-width: 1359px;
 
   &#top-contents{
     margin-bottom:50px;
@@ -89,18 +90,23 @@
 
   &.bg1 {
     background: url("/static/sm/images/bg_category_01.jpg") center no-repeat;
+    background-size: cover;
   }
   &.bg2 {
     background: url("/static/sm/images/bg_category_02.jpg") no-repeat;
+    background-size: cover;
   }
   &.bg3 {
     background: url("/static/sm/images/bg_category_03.jpg") center no-repeat;
+    background-size: cover;
   }
   &.bg4 {
     background: url("/static/sm/images/bg_category_04.jpg") center no-repeat;
+    background-size: cover;
   }
   &.bg5 {
     background: url("/static/sm/images/bg_category_05.jpg") center no-repeat;
+    background-size: cover;
   }
 
   &:after{
